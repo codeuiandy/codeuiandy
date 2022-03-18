@@ -35,7 +35,7 @@
   --line-height-small: 1.2;
 
   --black: #000;
-  --pink: #4099ff;
+  --pink: #48b4f6;
   --white: #f0e9f2;
   --white-1: #e5e5e6da;
 
@@ -521,7 +521,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .client__logos div span:nth-child(3) {
-  color: #4099ff;
+  color: #48b4f6;
 }
 
 .client__logo {
