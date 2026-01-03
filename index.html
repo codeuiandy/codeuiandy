@@ -67,9 +67,22 @@
         </div>
 
         <div class="vmimg">
-          <video autoplay muted loop id="myVideo">
-            <source src="./codeuiandy.m4v" />
+          <video
+            id="myVideo"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="./images/codeuiandy.JPG"
+            loading="lazy"
+          >
+            <source src="./codeuiandy.m4v" type="video/mp4" />
+            Your browser does not support the video tag.
           </video>
+          <div class="video-loading" id="videoLoading">
+            <div class="loading-spinner"></div>
+          </div>
         </div>
       </div>
     </header>

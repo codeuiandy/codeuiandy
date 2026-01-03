@@ -138,6 +138,53 @@ document.addEventListener('DOMContentLoaded', () => {
       vmimg.classList.add('visible');
     }, 400);
   }
+
+  // Optimize video loading
+  const video = document.getElementById('myVideo');
+  const videoLoading = document.getElementById('videoLoading');
+  
+  if (video && videoLoading) {
+    // Show loading spinner
+    videoLoading.classList.remove('hidden');
+    
+    // Load video metadata first, then play
+    video.addEventListener('loadedmetadata', () => {
+      // Video metadata loaded, start playing
+      video.play().catch(() => {
+        // Autoplay blocked, show loading until user interaction
+        console.log('Autoplay blocked');
+      });
+    });
+    
+    // Hide loading spinner when video can play
+    video.addEventListener('canplay', () => {
+      video.classList.add('loaded');
+      setTimeout(() => {
+        videoLoading.classList.add('hidden');
+      }, 300);
+    });
+    
+    // Handle video loading errors
+    video.addEventListener('error', () => {
+      videoLoading.classList.add('hidden');
+      console.error('Video loading error');
+    });
+    
+    // Intersection Observer for lazy loading video
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Video is in viewport, start loading
+          if (video.readyState === 0) {
+            video.load();
+          }
+          videoObserver.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '50px' });
+    
+    videoObserver.observe(video);
+  }
 });
 
 // Parallax scroll effect for background
