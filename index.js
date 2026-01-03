@@ -61,8 +61,14 @@ window.addEventListener("scroll", () => {
 
 // Intersection Observer for scroll animations
 const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
+  threshold: 0.05,
+  rootMargin: '0px 0px 50px 0px' // Trigger 50px before element enters viewport
+};
+
+// Separate observer for work boxes with earlier trigger
+const workObserverOptions = {
+  threshold: 0.05,
+  rootMargin: '0px 0px 100px 0px' // Trigger 100px before element enters viewport
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -75,6 +81,14 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
+const workObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, workObserverOptions);
+
 // Observe all sections
 document.addEventListener('DOMContentLoaded', () => {
   // Observe sections
@@ -83,11 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(section);
   });
 
-  // Observe work boxes with stagger delay
+  // Observe work boxes with stagger delay - use workObserver for earlier trigger
   const workBoxes = document.querySelectorAll('.work__box');
   workBoxes.forEach((box, index) => {
     box.style.transitionDelay = `${index * 0.1}s`;
-    observer.observe(box);
+    workObserver.observe(box);
   });
 
   // Observe client logos with stagger delay
