@@ -89,6 +89,40 @@ const workObserver = new IntersectionObserver((entries) => {
   });
 }, workObserverOptions);
 
+// Mobile Navigation Toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const navToggle = document.querySelector('.nav__toggle');
+  const navItems = document.querySelector('.nav__items');
+  const navLinks = document.querySelectorAll('.nav__link');
+
+  if (navToggle && navItems) {
+    navToggle.addEventListener('click', () => {
+      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !isExpanded);
+      navItems.classList.toggle('active');
+      document.body.style.overflow = !isExpanded ? 'hidden' : '';
+    });
+
+    // Close menu when clicking on a link
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.setAttribute('aria-expanded', 'false');
+        navItems.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navItems.contains(e.target) && !navToggle.contains(e.target)) {
+        navToggle.setAttribute('aria-expanded', 'false');
+        navItems.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+});
+
 // Observe all sections
 document.addEventListener('DOMContentLoaded', () => {
   // Observe sections
