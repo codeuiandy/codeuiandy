@@ -91,6 +91,65 @@ const workObserver = new IntersectionObserver((entries) => {
 
 // Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', () => {
+  // Project count in work intro
+  const workIntro = document.getElementById('workIntro');
+  const projectCount = document.querySelectorAll('.work__boxes > .work__box').length;
+  if (workIntro && projectCount > 0) {
+    workIntro.textContent = `${projectCount} shipped products across AI, health, retail, and creator tools—live in production today.`;
+  }
+
+  // Copy email
+  const copyBtn = document.getElementById('copyEmail');
+  const contactEmail = document.getElementById('contactEmail');
+  if (copyBtn && contactEmail) {
+    copyBtn.addEventListener('click', async () => {
+      const email = contactEmail.textContent.trim();
+      try {
+        await navigator.clipboard.writeText(email);
+        copyBtn.textContent = 'Copied!';
+        copyBtn.classList.add('copied');
+        setTimeout(() => {
+          copyBtn.textContent = 'Copy address';
+          copyBtn.classList.remove('copied');
+        }, 2000);
+      } catch {
+        window.location.href = `mailto:${email}`;
+      }
+    });
+  }
+
+  // Cursor glow (desktop, motion allowed)
+  const cursorGlow = document.getElementById('cursorGlow');
+  const prefersReducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
+  if (cursorGlow && !prefersReducedMotion && window.matchMedia('(pointer: fine)').matches) {
+    document.body.classList.add('has-cursor-glow');
+    window.addEventListener('mousemove', (e) => {
+      cursorGlow.style.left = `${e.clientX}px`;
+      cursorGlow.style.top = `${e.clientY}px`;
+    });
+  }
+
+  // Subtle tilt on project images
+  if (!prefersReducedMotion && window.matchMedia('(pointer: fine)').matches) {
+    document.querySelectorAll('.work__image-box').forEach((box) => {
+      box.addEventListener('mousemove', (e) => {
+        const rect = box.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        const img = box.querySelector('.work__image');
+        if (img) {
+          img.style.transform = `scale(1.03) rotateX(${y * -4}deg) rotateY(${x * 4}deg)`;
+        }
+      });
+      box.addEventListener('mouseleave', () => {
+        const img = box.querySelector('.work__image');
+        if (img) img.style.transform = '';
+      });
+    });
+  }
+
   const navToggle = document.querySelector('.nav__toggle');
   const navItems = document.querySelector('.nav__items');
   const navLinks = document.querySelectorAll('.nav__link');

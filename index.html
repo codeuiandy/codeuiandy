@@ -269,6 +269,8 @@
   </head>
 
   <body>
+    <a class="skip-link" href="#work">Skip to content</a>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
     <!-- Animated background gradient -->
     <div class="animated-bg"></div>
     <div class="grid-bg" aria-hidden="true"></div>
@@ -307,11 +309,16 @@
             <li class="nav__item">
               <a href="#contact" class="nav__link">Contact</a>
             </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link nav__cta">Hire me</a>
+            </li>
           </ul>
         </nav>
       </div>
 
       <div class="header__text-box row videoBg">
+        <div class="hero-glow hero-glow--1" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow--2" aria-hidden="true"></div>
         <div class="vmimgText">
           <p class="hero-badge">Mobile &amp; Web Developer · Lagos, Nigeria</p>
           <h1 class="heading-primary">
@@ -336,7 +343,8 @@
           </ul>
         </div>
 
-        <div class="vmimg">
+        <div class="vmimg vmimg--premium">
+          <div class="vmimg__ring" aria-hidden="true"></div>
           <video
             id="myVideo"
             autoplay
@@ -364,6 +372,10 @@
         <div class="row">
           <p class="section-label">Experience</p>
           <h2>Companies I've Worked With</h2>
+          <p class="section-intro">
+            Teams and brands I've helped ship products for—from fintech and
+            health to AI and retail.
+          </p>
           <div class="client__logos">
             <!-- Add logos of the clients or companies you'have worked with. -->
 
@@ -441,6 +453,10 @@
         <div class="row">
           <p class="section-label">About</p>
           <h2>About Me</h2>
+          <p class="section-intro">
+            Developer, consultant, and creator behind CODE UI ANDY—focused on
+            shipping interfaces people actually enjoy using.
+          </p>
           <div class="about__content">
             <div class="about__text">
               <!-- Replace the below paragraph with info about yourself -->
@@ -461,8 +477,18 @@
                 insights about web and mobile development, React.js, and React
                 Native, contributing to a vibrant learning community.
               </p>
-              <!-- Provide a link to your resume -->
-              <a href="mailto:frostandy41@gmail.com" class="btn">My Resume</a>
+              <ul class="skills-list" aria-label="Core skills">
+                <li>React.js</li>
+                <li>React Native</li>
+                <li>TypeScript</li>
+                <li>Next.js</li>
+                <li>UI/UX</li>
+                <li>REST APIs</li>
+                <li>Consulting</li>
+              </ul>
+              <a href="mailto:frostandy41@gmail.com" class="btn btn--pink"
+                >Email me</a
+              >
             </div>
 
             <div class="about__photo-container">
@@ -483,6 +509,10 @@
         <div class="row">
           <p class="section-label">Portfolio</p>
           <h2>Selected Work</h2>
+          <p class="section-intro" id="workIntro">
+            A curated set of web and mobile products—AI platforms, marketplaces,
+            and apps in production today.
+          </p>
           <div class="work__boxes">
             <!-- Each div with the work__box class is a project. -->
 
@@ -966,19 +996,34 @@
       <div class="row">
         <p class="section-label">Contact</p>
         <h2>Get in Touch</h2>
-        <div class="contact__info">
-          <p>
-            Are you in need of a high-performing and user-friendly website to
-            showcase your product or business? Whether you're seeking
-            consultation, have questions, want to offer advice, or simply wish
-            to say "Hi 👋," feel free to reach out. I'm here to provide prompt
-            responses and assistance. The fastest way to connect is through
-            email—I look forward to hearing from you! 😊
-          </p>
-          <!-- Replace the email with yours -->
-          <a href="mailto:frostandy41@gmail.com" class="btn"
-            >Click to say hello</a
-          >
+        <p class="section-intro">
+          Building something new? Tell me about your product—I usually reply
+          within 24 hours.
+        </p>
+        <div class="contact__grid">
+          <div class="contact__card contact__card--primary">
+            <span class="contact__card-label">Email</span>
+            <a
+              href="mailto:frostandy41@gmail.com"
+              class="contact__email"
+              id="contactEmail"
+              >frostandy41@gmail.com</a
+            >
+            <button type="button" class="contact__copy" id="copyEmail">
+              Copy address
+            </button>
+          </div>
+          <div class="contact__card">
+            <span class="contact__card-label">Let's talk about</span>
+            <ul class="contact__topics">
+              <li>Web &amp; mobile apps</li>
+              <li>React / React Native</li>
+              <li>UI polish &amp; consulting</li>
+            </ul>
+            <a href="mailto:frostandy41@gmail.com" class="btn btn--pink"
+              >Start a conversation</a
+            >
+          </div>
         </div>
       </div>
     </section>
