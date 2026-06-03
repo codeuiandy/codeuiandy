@@ -145,18 +145,10 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(logo);
   });
 
-  // Observe headings
-  const headings = document.querySelectorAll('h2, h3');
-  headings.forEach(heading => {
-    heading.classList.add('fade-in');
-    observer.observe(heading);
-  });
-
-  // Observe paragraphs
-  const paragraphs = document.querySelectorAll('p');
-  paragraphs.forEach(para => {
-    para.classList.add('fade-in');
-    observer.observe(para);
+  // Observe section labels and key headings only
+  document.querySelectorAll('.section-label, .work__text h3').forEach((el) => {
+    el.classList.add('fade-in');
+    observer.observe(el);
   });
 
   // Observe about photo
@@ -263,4 +255,22 @@ window.addEventListener('scroll', () => {
   }
   
   lastScrollTop = scrollTop;
+
+  // Highlight active nav link
+  const sections = document.querySelectorAll('section[id], header[id]');
+  const navLinks = document.querySelectorAll('.nav__link');
+  let currentId = 'top';
+
+  sections.forEach((section) => {
+    const top = section.offsetTop - 120;
+    if (scrollTop >= top) {
+      currentId = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach((link) => {
+    const href = link.getAttribute('href');
+    const isActive = href === `#${currentId}`;
+    link.classList.toggle('nav__link--active', isActive);
+  });
 }, false);

@@ -79,7 +79,13 @@
     <meta name="twitter:creator" content="@codeuiandy" />
 
     <!-- Additional SEO -->
-    <meta name="theme-color" content="#48b4f6" />
+    <meta name="theme-color" content="#070b14" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta
       name="apple-mobile-web-app-status-bar-style"
@@ -265,13 +271,14 @@
   <body>
     <!-- Animated background gradient -->
     <div class="animated-bg"></div>
+    <div class="grid-bg" aria-hidden="true"></div>
     <!-- Scroll progress indicator -->
     <div class="scroll-progress"></div>
     <!-- ***** Header ***** -->
 
     <header class="header" role="banner" id="top">
       <div class="row">
-        <nav class="nav navimg" role="navigation">
+        <nav class="nav navimg nav--glass" role="navigation">
           <img
             src="./images/codeuiandy-logo.png"
             alt="Andrew Okeke (CODE UI ANDY) Logo - Mobile and Web Developer, Consultant and YouTuber"
@@ -306,23 +313,27 @@
 
       <div class="header__text-box row videoBg">
         <div class="vmimgText">
+          <p class="hero-badge">Mobile &amp; Web Developer · Lagos, Nigeria</p>
           <h1 class="heading-primary">
-            <!-- Replace the following name with your name -->
-            <span>Andrew Okeke</span>
-            <span style="display: block; font-size: 0.7em; margin-top: 0.5rem">
-              <span style="color: var(--pink)">CODE UI</span> ANDY
+            <span class="heading-primary__name">Andrew Okeke</span>
+            <span class="heading-primary__brand">
+              <span class="text-gradient">CODE UI</span> ANDY
             </span>
           </h1>
-          <!-- Put a small paragraph about yourself -->
-          <p>
-            Mobile and Web Developer, Consultant, and YouTuber with expertise in
-            React.js and React Native. I build modern, responsive web and mobile
-            applications, provide technical consulting services, and share my
-            knowledge through YouTube. Specializing in creating visually
-            appealing and functional interfaces for both web and mobile
-            platforms using React and React Native.
+          <p class="hero-description">
+            I design and ship polished React &amp; React Native experiences for
+            web and mobile—AI products, marketplaces, and apps used by real users
+            across Africa, North America, and beyond.
           </p>
-          <a href="#contact" class="btn btn--pink">Get in touch</a>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn--pink">Get in touch</a>
+            <a href="#work" class="btn btn--ghost">View my work</a>
+          </div>
+          <ul class="hero-stats" aria-label="Focus areas">
+            <li><strong>React.js</strong><span>Web apps</span></li>
+            <li><strong>React Native</strong><span>Mobile apps</span></li>
+            <li><strong>Consulting</strong><span>Product &amp; UI</span></li>
+          </ul>
         </div>
 
         <div class="vmimg">
@@ -346,12 +357,13 @@
       </div>
     </header>
 
-    <main role="main">
+    <main role="main" class="main-content">
       <!-- ***** Clients ***** -->
 
       <section class="client" id="clients">
         <div class="row">
-          <h2>Companies I have worked with.</h2>
+          <p class="section-label">Experience</p>
+          <h2>Companies I've Worked With</h2>
           <div class="client__logos">
             <!-- Add logos of the clients or companies you'have worked with. -->
 
@@ -427,6 +439,7 @@
 
       <section class="about" id="about">
         <div class="row">
+          <p class="section-label">About</p>
           <h2>About Me</h2>
           <div class="about__content">
             <div class="about__text">
@@ -468,7 +481,8 @@
 
       <section class="work" id="work">
         <div class="row">
-          <h2>My Work</h2>
+          <p class="section-label">Portfolio</p>
+          <h2>Selected Work</h2>
           <div class="work__boxes">
             <!-- Each div with the work__box class is a project. -->
 
@@ -950,6 +964,7 @@
 
     <section class="contact" id="contact">
       <div class="row">
+        <p class="section-label">Contact</p>
         <h2>Get in Touch</h2>
         <div class="contact__info">
           <p>
