@@ -150,6 +150,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Work filters
+  const workFilters = document.querySelectorAll('.work__filter');
+  const workBoxes = document.querySelectorAll('.work__boxes > .work__box');
+
+  workFilters.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      workFilters.forEach((b) => {
+        const active = b === btn;
+        b.classList.toggle('work__filter--active', active);
+        b.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      workBoxes.forEach((box) => {
+        const category = box.dataset.category;
+        const show = filter === 'all' || category === filter;
+        box.classList.toggle('is-hidden', !show);
+        if (show) box.classList.add('visible');
+      });
+    });
+  });
+
   const navToggle = document.querySelector('.nav__toggle');
   const navItems = document.querySelector('.nav__items');
   const navLinks = document.querySelectorAll('.nav__link');

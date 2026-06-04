@@ -521,11 +521,41 @@
             A curated set of web and mobile products—AI platforms, marketplaces,
             and apps in production today.
           </p>
+          <div class="work__filters" role="tablist" aria-label="Filter projects">
+            <button
+              type="button"
+              class="work__filter work__filter--active"
+              data-filter="all"
+              role="tab"
+              aria-selected="true"
+            >
+              All
+            </button>
+            <button
+              type="button"
+              class="work__filter"
+              data-filter="web"
+              role="tab"
+              aria-selected="false"
+            >
+              Web
+            </button>
+            <button
+              type="button"
+              class="work__filter"
+              data-filter="mobile"
+              role="tab"
+              aria-selected="false"
+            >
+              Mobile
+            </button>
+          </div>
           <div class="work__boxes">
             <!-- Each div with the work__box class is a project. -->
 
             <article
               class="work__box"
+              data-category="web"
               itemscope
               itemtype="https://schema.org/SoftwareApplication"
             >
@@ -573,6 +603,8 @@
                 <img
                   src="./images/answir.png"
                   class="work__image"
+                  loading="lazy"
+                  decoding="async"
                   alt="Answir - AI investor relations platform by CODE UI ANDY"
                   itemprop="screenshot"
                 />
@@ -581,6 +613,7 @@
 
             <article
               class="work__box"
+              data-category="mobile"
               itemscope
               itemtype="https://schema.org/SoftwareApplication"
             >
@@ -624,6 +657,8 @@
                 <img
                   src="./images/bonnee.png"
                   class="work__image"
+                  loading="lazy"
+                  decoding="async"
                   alt="BONNEE - Clothing swap mobile app by CODE UI ANDY"
                   itemprop="screenshot"
                 />
@@ -632,6 +667,7 @@
 
             <article
               class="work__box"
+              data-category="web"
               itemscope
               itemtype="https://schema.org/SoftwareApplication"
             >
@@ -679,6 +715,8 @@
                 <img
                   src="./images/retinalogik.png"
                   class="work__image"
+                  loading="lazy"
+                  decoding="async"
                   alt="RetinaLogik - Vision testing platform by CODE UI ANDY"
                   itemprop="screenshot"
                 />
@@ -687,6 +725,7 @@
 
             <article
               class="work__box"
+              data-category="web"
               itemscope
               itemtype="https://schema.org/SoftwareApplication"
             >
@@ -734,6 +773,8 @@
                 <img
                   src="./images/breezeflow.png"
                   class="work__image"
+                  loading="lazy"
+                  decoding="async"
                   alt="Breezeflow - AI customer support platform by CODE UI ANDY"
                   itemprop="screenshot"
                 />
@@ -742,6 +783,7 @@
 
             <article
               class="work__box"
+              data-category="web"
               itemscope
               itemtype="https://schema.org/SoftwareApplication"
             >
@@ -788,6 +830,8 @@
                 <img
                   src="./images/cozyintro.png"
                   class="work__image"
+                  loading="lazy"
+                  decoding="async"
                   alt="CozyIntro - Fan engagement platform by CODE UI ANDY"
                   itemprop="screenshot"
                 />
@@ -796,6 +840,7 @@
 
             <article
               class="work__box"
+              data-category="mobile"
               itemscope
               itemtype="https://schema.org/SoftwareApplication"
             >
@@ -840,6 +885,8 @@
                 <img
                   src="./images/omnibiz-retail.png"
                   class="work__image"
+                  loading="lazy"
+                  decoding="async"
                   alt="Omnibiz Retail - B2B FMCG mobile app by CODE UI ANDY"
                   itemprop="screenshot"
                 />
@@ -848,6 +895,7 @@
 
             <article
               class="work__box"
+              data-category="web"
               itemscope
               itemtype="https://schema.org/SoftwareApplication"
             >
@@ -894,6 +942,8 @@
                 <img
                   src="./images/p1.png"
                   class="work__image"
+                  loading="lazy"
+                  decoding="async"
                   alt="Tremendoc Telemedicine Platform - Frontend development project by CODE UI ANDY"
                   itemprop="screenshot"
                 />
@@ -902,6 +952,7 @@
 
             <article
               class="work__box"
+              data-category="web"
               itemscope
               itemtype="https://schema.org/SoftwareApplication"
             >
@@ -946,13 +997,15 @@
                 <img
                   src="./images/colagig.png"
                   class="work__image"
+                  loading="lazy"
+                  decoding="async"
                   alt="Collar Gig - African Freelancers Platform - Frontend development project by CODE UI ANDY"
                   itemprop="screenshot"
                 />
               </div>
             </article>
 
-            <div class="work__box">
+            <div class="work__box" data-category="mobile">
               <div class="work__text">
                 <h3>Erider Mobile App</h3>
                 <p>
@@ -989,6 +1042,8 @@
                 <img
                   src="./images/erider.png"
                   class="work__image"
+                  loading="lazy"
+                  decoding="async"
                   alt="Project 1"
                 />
               </div>

@@ -2226,6 +2226,42 @@ body.has-cursor-glow .cursor-glow {
   }
 }
 
+.work__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: var(--gutter-medium);
+}
+
+.work__filter {
+  font-family: var(--font-stack);
+  font-size: 1.35rem;
+  font-weight: 500;
+  padding: 0.7rem 1.6rem;
+  border-radius: var(--radius-pill);
+  border: var(--border-light);
+  background: var(--surface);
+  color: var(--white-1);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.work__filter:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  color: var(--white);
+}
+
+.work__filter--active {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  color: var(--black);
+  border-color: transparent;
+  font-weight: 600;
+}
+
+.work__box.is-hidden {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
