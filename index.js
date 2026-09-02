@@ -218,7 +218,13 @@ document.addEventListener('DOMContentLoaded', () => {
     workObserver.observe(box);
   });
 
-  // Observe client logos with stagger delay
+  // Observe experience timeline items + client logos with stagger delay
+  const experienceItems = document.querySelectorAll('.experience__item');
+  experienceItems.forEach((item, index) => {
+    item.style.transitionDelay = `${index * 0.12}s`;
+    observer.observe(item);
+  });
+
   const clientLogos = document.querySelectorAll('.client__logos div');
   clientLogos.forEach((logo, index) => {
     logo.style.transitionDelay = `${index * 0.1}s`;

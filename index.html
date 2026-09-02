@@ -112,8 +112,9 @@
         "givenName": "Andrew",
         "familyName": "Okeke",
         "jobTitle": [
-          "Mobile Developer",
-          "Web Developer",
+          "Senior Software Engineer",
+          "Senior React.js & React Native Developer",
+          "Frontend Team Lead",
           "Consultant",
           "YouTuber"
         ],
@@ -144,32 +145,20 @@
         ],
         "alumniOf": {
           "@type": "Organization",
-          "name": "IT Skills Center"
+          "name": "ITSkillsCenter"
         },
-        "worksFor": [
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Union Systems Limited"
+        },
+        "hasOccupation": [
           {
-            "@type": "Organization",
-            "name": "Sterling Bank"
-          },
-          {
-            "@type": "Organization",
-            "name": "Union System"
-          },
-          {
-            "@type": "Organization",
-            "name": "Soar Digital"
-          },
-          {
-            "@type": "Organization",
-            "name": "Tremendoc"
-          },
-          {
-            "@type": "Organization",
-            "name": "AlphaCX"
-          },
-          {
-            "@type": "Organization",
-            "name": "Paysync"
+            "@type": "Occupation",
+            "name": "Senior Software Engineer",
+            "occupationLocation": {
+              "@type": "Place",
+              "name": "Lagos State, Nigeria"
+            }
           }
         ]
       }
@@ -309,7 +298,7 @@
               <a href="#work" class="nav__link">Work</a>
             </li>
             <li class="nav__item">
-              <a href="#clients" class="nav__link">Clients</a>
+              <a href="#experience" class="nav__link">Experience</a>
             </li>
             <li class="nav__item">
               <a href="#about" class="nav__link">About</a>
@@ -328,7 +317,7 @@
         <div class="hero-glow hero-glow--1" aria-hidden="true"></div>
         <div class="hero-glow hero-glow--2" aria-hidden="true"></div>
         <div class="vmimgText">
-          <p class="hero-badge">Mobile &amp; Web Developer · Lagos, Nigeria</p>
+          <p class="hero-badge">Senior React &amp; React Native · Lagos, Nigeria</p>
           <h1 class="heading-primary">
             <span class="heading-primary__name">Andrew Okeke</span>
             <span class="heading-primary__brand">
@@ -336,9 +325,9 @@
             </span>
           </h1>
           <p class="hero-description">
-            I design and ship polished React &amp; React Native experiences for
-            web and mobile—AI products, marketplaces, and apps used by real users
-            across Africa, North America, and beyond.
+            5+ years building high-performance React &amp; React Native apps for
+            web and mobile—AI products, marketplaces, and experiences used across
+            Africa, North America, and beyond.
           </p>
           <div class="hero-actions">
             <a href="#contact" class="btn btn--pink">Get in touch</a>
@@ -374,82 +363,197 @@
     </header>
 
     <main role="main" class="main-content">
-      <!-- ***** Clients ***** -->
+      <!-- ***** Experience ***** -->
 
-      <section class="client" id="clients">
+      <section class="experience" id="experience">
         <div class="row">
           <p class="section-label">Experience</p>
-          <h2>Companies I've Worked With</h2>
+          <h2>Where I've Built</h2>
           <p class="section-intro">
-            Teams and brands I've helped ship products for—from fintech and
-            health to AI and retail.
+            From fintech and banking to edtech and remote US product teams—roles
+            where I've led frontend delivery and shipped production apps.
           </p>
-          <div class="client__logos">
-            <!-- Add logos of the clients or companies you'have worked with. -->
 
-            <div>
-              <img
-                src="./images/itskills.jpeg"
-                class="client__logo"
-                alt="Company 1"
-              />
-              <span>IT Skills center</span>
-            </div>
+          <ol class="experience__timeline">
+            <li class="experience__item experience__item--current">
+              <div class="experience__marker" aria-hidden="true"></div>
+              <article class="experience__card">
+                <div class="experience__card-top">
+                  <img
+                    src="./images/unionsystem.png"
+                    class="experience__logo"
+                    alt=""
+                    width="48"
+                    height="48"
+                  />
+                  <div class="experience__heading">
+                    <h3>Senior Software Engineer</h3>
+                    <p class="experience__company">Union Systems Limited</p>
+                  </div>
+                  <span class="experience__badge">Present</span>
+                </div>
+                <div class="experience__meta">
+                  <span>Full-time · Hybrid</span>
+                  <span>Sep 2023 – Present</span>
+                  <span>Lagos State, Nigeria</span>
+                </div>
+                <p class="experience__role">Frontend Team Lead</p>
+                <p class="experience__desc">
+                  Lead the React.js frontend engineering team in building
+                  secure, scalable, and high-performance web applications.
+                </p>
+                <ul class="experience__skills" aria-label="Skills">
+                  <li>Front-End Development</li>
+                  <li>React Native</li>
+                  <li>React.js</li>
+                  <li>TypeScript</li>
+                </ul>
+              </article>
+            </li>
 
-            <div>
-              <img
-                src="./images/unionsystem.png"
-                class="client__logo"
-                alt="Company 2"
-              />
-              <span>Union System</span>
-              <!-- <span>Currently Working here</span> -->
-            </div>
+            <li class="experience__item">
+              <div class="experience__marker" aria-hidden="true"></div>
+              <article class="experience__card">
+                <div class="experience__card-top">
+                  <img
+                    src="./images/breezelearn-mark.png"
+                    class="experience__logo experience__logo--dark"
+                    alt="BreezeLearn"
+                    width="48"
+                    height="48"
+                  />
+                  <div class="experience__heading">
+                    <h3>Senior Software Engineer</h3>
+                    <p class="experience__company">
+                      <a href="https://breezelearn.com/" target="_blank" rel="noopener noreferrer"
+                        >BreezeLearn</a
+                      >
+                    </p>
+                  </div>
+                  <span class="experience__badge experience__badge--muted"
+                    >Contract</span
+                  >
+                </div>
+                <div class="experience__meta">
+                  <span>Contract · Remote</span>
+                  <span>Jul 2022 – Aug 2023</span>
+                  <span>United States</span>
+                </div>
+                <p class="experience__desc">
+                  Developed mobile and web applications with a focus on user
+                  experience and accessibility. Sole frontend engineer for the
+                  BONNEE app, delivering high-quality releases end to end.
+                </p>
+                <ul class="experience__skills" aria-label="Skills">
+                  <li>Front-End Development</li>
+                  <li>React Native</li>
+                  <li>React.js</li>
+                </ul>
+              </article>
+            </li>
 
-            <div>
-              <img
-                src="./images/sterling-bank-logo.png"
-                class="client__logo"
-                alt="Company 2"
-              />
-              <span>Sterling Bank</span>
-              <!-- <span>Currently Working here</span> -->
-            </div>
+            <li class="experience__item">
+              <div class="experience__marker" aria-hidden="true"></div>
+              <article class="experience__card">
+                <div class="experience__card-top">
+                  <img
+                    src="./images/sterling-bank-logo.png"
+                    class="experience__logo"
+                    alt=""
+                    width="48"
+                    height="48"
+                  />
+                  <div class="experience__heading">
+                    <h3>Frontend Developer</h3>
+                    <p class="experience__company">Sterling Bank</p>
+                  </div>
+                </div>
+                <div class="experience__meta">
+                  <span>Full-time · Remote</span>
+                  <span>Jun 2021 – Jun 2022</span>
+                  <span>Lagos State, Nigeria</span>
+                </div>
+                <p class="experience__desc">
+                  Built and maintained React and React Native interfaces for
+                  banking digital products used by customers across Nigeria.
+                </p>
+                <ul class="experience__skills" aria-label="Skills">
+                  <li>Front-End Development</li>
+                  <li>React Native</li>
+                  <li>React.js</li>
+                </ul>
+              </article>
+            </li>
 
-            <div>
-              <img
-                src="./images/soar.jpeg"
-                class="client__logo"
-                alt="Company 3"
-              />
-              <span>Soar digital</span>
-            </div>
+            <li class="experience__item">
+              <div class="experience__marker" aria-hidden="true"></div>
+              <article class="experience__card">
+                <div class="experience__card-top">
+                  <img
+                    src="./images/itskills.jpeg"
+                    class="experience__logo"
+                    alt=""
+                    width="48"
+                    height="48"
+                  />
+                  <div class="experience__heading">
+                    <h3>Frontend Developer</h3>
+                    <p class="experience__company">ITSkillsCenter</p>
+                  </div>
+                </div>
+                <div class="experience__meta">
+                  <span>Full-time · On-site</span>
+                  <span>Jan 2020 – May 2021</span>
+                  <span>Lagos State, Nigeria</span>
+                </div>
+                <p class="experience__desc">
+                  Developed responsive frontend interfaces and grew foundational
+                  skills in modern web development and UI implementation.
+                </p>
+                <ul class="experience__skills" aria-label="Skills">
+                  <li>Front-End Development</li>
+                  <li>JavaScript</li>
+                  <li>HTML &amp; CSS</li>
+                </ul>
+              </article>
+            </li>
+          </ol>
 
-            <div>
-              <img
-                src="./images/tremendoc.jpeg"
-                class="client__logo"
-                alt="Company 3"
-              />
-              <span>Tremendoc</span>
-            </div>
-
-            <div>
-              <img
-                src="./images/alphacx.jpeg"
-                class="client__logo"
-                alt="Company 1"
-              />
-              <span>AlphaCX</span>
-            </div>
-
-            <div>
-              <img
-                src="./images/paysync.jpeg"
-                class="client__logo"
-                alt="Company 1"
-              />
-              <span>Paysync</span>
+          <div class="experience__collaborators">
+            <p class="experience__collaborators-label">Also shipped with</p>
+            <div class="client__logos">
+              <div>
+                <img
+                  src="./images/soar.jpeg"
+                  class="client__logo"
+                  alt="Soar Digital"
+                />
+                <span>Soar Digital</span>
+              </div>
+              <div>
+                <img
+                  src="./images/tremendoc.jpeg"
+                  class="client__logo"
+                  alt="Tremendoc"
+                />
+                <span>Tremendoc</span>
+              </div>
+              <div>
+                <img
+                  src="./images/alphacx.jpeg"
+                  class="client__logo"
+                  alt="AlphaCX"
+                />
+                <span>AlphaCX</span>
+              </div>
+              <div>
+                <img
+                  src="./images/paysync.jpeg"
+                  class="client__logo"
+                  alt="Paysync"
+                />
+                <span>Paysync</span>
+              </div>
             </div>
           </div>
         </div>
@@ -469,21 +573,12 @@
             <div class="about__text">
               <!-- Replace the below paragraph with info about yourself -->
               <p>
-                I'm Andrew Okeke, also known as CODE UI ANDY - a Mobile and Web
-                Developer, Consultant, and YouTuber based in Lagos, Nigeria. I
-                specialize in building modern web and mobile applications using
-                React.js and React Native. As a developer, I create responsive,
-                user-friendly interfaces for both web and mobile platforms. My
-                expertise includes React.js for web development and React Native
-                for cross-platform mobile applications. I'm passionate about
-                delivering high-quality user experiences and staying current
-                with emerging trends in web and mobile development. As a
-                consultant, I provide strategic guidance and technical expertise
-                to help businesses achieve their digital goals. I work with
-                cross-functional teams to translate business requirements into
-                technical solutions. As a YouTuber, I share my knowledge and
-                insights about web and mobile development, React.js, and React
-                Native, contributing to a vibrant learning community.
+                I'm Andrew Okeke, also known as CODE UI ANDY—a Senior React.js
+                &amp; React Native developer based in Lagos, Nigeria, with 5+
+                years building high-performance web and mobile apps. I lead
+                frontend teams, ship TypeScript-first products, and consult on
+                UI that holds up in production. As a YouTuber, I share practical
+                lessons on React, React Native, and modern frontend craft.
               </p>
               <ul class="skills-list" aria-label="Core skills">
                 <li>React.js</li>
