@@ -149,7 +149,7 @@ story.append(Paragraph(
     "Senior AI software engineer and contractor with 5+ years building production web and mobile products "
     "for teams in Africa and the United States. I design and ship LLM-powered assistants, retrieval over "
     "company data, AI support automation, and the React, Next.js and React Native interfaces that make AI "
-    "useful to real users. Currently Frontend Team Lead at Union Systems; remote contractor for US product "
+    "useful to real users. Currently Team Lead at Discovery Vault Technology; remote contractor for US product "
     "teams since 2022. Available for fixed-scope projects, monthly retainers and team augmentation, "
     "with weekly demos and working hours that overlap with US and EU teams.", body))
 
@@ -167,9 +167,9 @@ story.append(tight(Table([[Paragraph(k, label), Paragraph(v, body)] for k, v in 
 
 story += section("Professional experience")
 story += [
-    job("Senior Software Engineer, Frontend Team Lead", "Union Systems Limited",
+    job("Senior Software Engineer, Team Lead", "Discovery Vault Technology",
         "Full-time, hybrid, Lagos", "Sep 2023 – Present", [
-            "Lead the React.js frontend team delivering secure, scalable fintech web applications for African financial institutions.",
+            "Lead the engineering team delivering secure, scalable software, cloud platforms and APIs for organisations across West Africa and worldwide.",
             "Own frontend architecture, coding standards and code review, raising performance and release quality.",
             "Partner with product, design and backend teams to scope features, plan sprints and ship production-ready interfaces.",
         ], "React.js, TypeScript, React Native"),
