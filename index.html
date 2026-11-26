@@ -1,1248 +1,434 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="no-js">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" type="image/png" href="./images/favicons.ico" />
-    <link
-      rel="apple-touch-icon"
-      href="https://codeuiandy.vercel.app/images/og-preview.jpg"
-    />
-
-    <!-- SEO Meta Tags -->
-    <title>
-      Andrew Okeke (CODE UI ANDY) | Mobile & Web Developer, Consultant &
-      YouTuber | React & React Native Expert
-    </title>
-
+    <link rel="apple-touch-icon" href="https://codeuiandy.vercel.app/images/og-preview.jpg" />
+    <title>Andrew Okeke | AI Software Engineer &amp; Contractor</title>
     <meta
       name="description"
-      content="Andrew Okeke (CODE UI ANDY) - Mobile and Web Developer, Consultant, and YouTuber based in Lagos, Nigeria. Specializing in React.js and React Native for web and mobile applications. Expert in frontend development, UI/UX design, and technical consulting."
+      content="Andrew Okeke (CODE UI ANDY) — AI Software Engineer and contractor. I build LLM-powered products, AI assistants, retrieval systems and the web & mobile apps around them. Available for remote contracts."
     />
-
     <meta
       name="keywords"
-      content="Andrew Okeke, Okeke Andrew, CODE UI ANDY, Mobile Developer, Web Developer, React Developer, React Native Developer, Frontend Developer, Consultant, YouTuber, React.js, React Native, JavaScript Developer, Mobile App Developer, Web App Developer, Lagos Nigeria Developer, Frontend Consultant, UI Developer, UX Developer"
+      content="Andrew Okeke, CODE UI ANDY, AI Software Engineer, AI Engineer, LLM Engineer, AI Contractor, RAG, AI Agents, React, React Native, Next.js, TypeScript, Remote Contractor"
     />
-
-    <meta name="author" content="Andrew Okeke (CODE UI ANDY)" />
-    <meta
-      name="robots"
-      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-    />
-    <meta name="googlebot" content="index, follow" />
+    <meta name="theme-color" content="#05060a" />
     <link rel="canonical" href="https://codeuiandy.vercel.app/" />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://codeuiandy.vercel.app/" />
-    <meta
-      property="og:title"
-      content="Andrew Okeke (CODE UI ANDY) | Mobile & Web Developer, Consultant & YouTuber"
-    />
+    <meta property="og:title" content="Andrew Okeke | AI Software Engineer & Contractor" />
     <meta
       property="og:description"
-      content="Andrew Okeke (CODE UI ANDY) - Mobile and Web Developer, Consultant, and YouTuber specializing in React.js and React Native. Expert in building web and mobile applications. Based in Lagos, Nigeria."
+      content="I build LLM-powered products, AI assistants and the apps around them. Available for remote contracts."
     />
-    <meta
-      property="og:image"
-      content="https://codeuiandy.vercel.app/images/og-preview.jpg"
-    />
-    <meta
-      property="og:image:secure_url"
-      content="https://codeuiandy.vercel.app/images/og-preview.jpg"
-    />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:type" content="image/jpeg" />
-    <meta
-      property="og:image:alt"
-      content="Andrew Okeke (CODE UI ANDY) - Mobile and Web Developer, Consultant and YouTuber"
-    />
-    <meta property="og:locale" content="en_US" />
-    <meta
-      property="og:site_name"
-      content="Andrew Okeke (CODE UI ANDY) Portfolio"
-    />
-
-    <!-- Twitter Card -->
+    <meta property="og:image" content="https://codeuiandy.vercel.app/images/og-preview.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://codeuiandy.vercel.app/" />
-    <meta
-      name="twitter:title"
-      content="Andrew Okeke (CODE UI ANDY) | Mobile & Web Developer, Consultant & YouTuber"
-    />
-    <meta
-      name="twitter:description"
-      content="Andrew Okeke (CODE UI ANDY) - Mobile and Web Developer, Consultant, and YouTuber specializing in React.js and React Native for web and mobile applications."
-    />
-    <meta
-      name="twitter:image"
-      content="https://codeuiandy.vercel.app/images/og-preview.jpg"
-    />
-    <meta
-      name="twitter:image:alt"
-      content="Andrew Okeke (CODE UI ANDY) - Mobile and Web Developer, Consultant and YouTuber"
-    />
-    <meta name="twitter:creator" content="@codeuiandy" />
+    <meta name="twitter:title" content="Andrew Okeke | AI Software Engineer & Contractor" />
+    <meta name="twitter:image" content="https://codeuiandy.vercel.app/images/og-preview.jpg" />
 
-    <!-- Additional SEO -->
-    <meta name="theme-color" content="#070b14" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-
     <link rel="stylesheet" href="index.css" />
 
-    <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Andrew Okeke",
-        "alternateName": ["CODE UI ANDY", "Okeke Andrew"],
-        "givenName": "Andrew",
-        "familyName": "Okeke",
-        "jobTitle": [
-          "Senior Software Engineer",
-          "Senior React.js & React Native Developer",
-          "Frontend Team Lead",
-          "Consultant",
-          "YouTuber"
-        ],
+        "alternateName": ["CODE UI ANDY"],
+        "jobTitle": ["AI Software Engineer", "Senior Software Engineer", "Contractor"],
         "url": "https://codeuiandy.vercel.app",
         "image": "https://codeuiandy.vercel.app/images/og-preview.jpg",
+        "email": "frostandy41@gmail.com",
         "sameAs": [
           "https://twitter.com/codeuiandy",
           "https://github.com/codeuiandy",
           "https://www.linkedin.com/in/codeuiandy/"
         ],
-        "email": "frostandy41@gmail.com",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Lagos",
-          "addressCountry": "NG"
-        },
-        "knowsAbout": [
-          "React.js",
-          "React Native",
-          "JavaScript",
-          "HTML",
-          "CSS",
-          "SCSS",
-          "Frontend Development",
-          "Mobile App Development",
-          "UI/UX Design",
-          "Web Development"
-        ],
-        "alumniOf": {
-          "@type": "Organization",
-          "name": "ITSkillsCenter"
-        },
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Union Systems Limited"
-        },
-        "hasOccupation": [
-          {
-            "@type": "Occupation",
-            "name": "Senior Software Engineer",
-            "occupationLocation": {
-              "@type": "Place",
-              "name": "Lagos State, Nigeria"
-            }
-          }
-        ]
-      }
-    </script>
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Andrew Okeke Portfolio",
-        "alternateName": "CODE UI ANDY Portfolio",
-        "url": "https://codeuiandy.vercel.app",
-        "author": {
-          "@type": "Person",
-          "name": "Andrew Okeke",
-          "alternateName": "CODE UI ANDY"
-        },
-        "description": "Portfolio website of Andrew Okeke (CODE UI ANDY) - Mobile and Web Developer, Consultant, and YouTuber specializing in React.js and React Native for web and mobile applications."
-      }
-    </script>
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Andrew Okeke Portfolio Projects",
-        "alternateName": "CODE UI ANDY Portfolio Projects",
-        "description": "Collection of web and mobile development projects by Andrew Okeke (CODE UI ANDY) - Mobile and Web Developer specializing in React.js and React Native",
-        "itemListElement": [
-          {
-            "@type": "SoftwareApplication",
-            "name": "Tremendoc",
-            "description": "Tremendoc Telemedicine Platform offers a 24 hours holistic virtual experience that provides accessible and affordable health care services through telemedicine",
-            "applicationCategory": "WebApplication",
-            "operatingSystem": "Web",
-            "url": "https://tremendoc.com/"
-          },
-          {
-            "@type": "SoftwareApplication",
-            "name": "Collar Gig",
-            "description": "Connecting African Freelancers & Global Businesses",
-            "applicationCategory": "WebApplication",
-            "operatingSystem": "Web",
-            "url": "https://collargig.com/"
-          },
-          {
-            "@type": "SoftwareApplication",
-            "name": "Erider Mobile App",
-            "description": "E&E app provides users quick and seamless shipment creation from the comfort of their homes and Offices",
-            "applicationCategory": "MobileApplication",
-            "operatingSystem": "Android",
-            "url": "https://play.google.com/store/apps/details?id=com.erider"
-          },
-          {
-            "@type": "SoftwareApplication",
-            "name": "Answir",
-            "description": "AI-powered investor relations platform that automates investor Q&A with instant, accurate answers from public filings and corporate data",
-            "applicationCategory": "WebApplication",
-            "operatingSystem": "Web",
-            "url": "https://answir.ai/"
-          },
-          {
-            "@type": "SoftwareApplication",
-            "name": "Breezeflow",
-            "description": "24/7 AI customer support platform—intelligent responses that reduce wait times and keep customers satisfied around the clock",
-            "applicationCategory": "WebApplication",
-            "operatingSystem": "Web",
-            "url": "https://www.breezeflow.io/"
-          },
-          {
-            "@type": "SoftwareApplication",
-            "name": "CozyIntro",
-            "description": "Fan engagement platform that helps creators build deeper connections with fans and unlock new revenue through meaningful interactions",
-            "applicationCategory": "WebApplication",
-            "operatingSystem": "Web",
-            "url": "https://cozyintro.breezegpt.io/"
-          },
-          {
-            "@type": "SoftwareApplication",
-            "name": "RetinaLogik",
-            "description": "Portable VR visual field testing platform for eye care clinics—patient-friendly vision screening with multilingual support and trusted clinical workflows",
-            "applicationCategory": "WebApplication",
-            "operatingSystem": "Web",
-            "url": "https://www.retinalogik.com/"
-          },
-          {
-            "@type": "SoftwareApplication",
-            "name": "BONNEE",
-            "description": "Clothing swap mobile app—trade pieces from your closet for Swap Coins and discover new-to-you fashion without buying or selling. Available in the USA market only",
-            "applicationCategory": "MobileApplication",
-            "operatingSystem": "iOS, Android",
-            "url": "https://www.bonnee.co/"
-          },
-          {
-            "@type": "SoftwareApplication",
-            "name": "Omnibiz Retail",
-            "description": "B2B FMCG retail mobile app—restock your outlet, place orders, pay with flexible options, and track delivery from one app",
-            "applicationCategory": "MobileApplication",
-            "operatingSystem": "Android",
-            "url": "https://play.google.com/store/apps/details?id=com.omnibiz.retail"
-          }
-        ]
+        "address": { "@type": "PostalAddress", "addressLocality": "Lagos", "addressCountry": "NG" },
+        "knowsAbout": ["Artificial Intelligence", "Large Language Models", "RAG", "AI Agents", "React", "React Native", "TypeScript", "Next.js", "Node.js"]
       }
     </script>
   </head>
 
   <body>
-    <a class="skip-link" href="#work">Skip to content</a>
-    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
-    <!-- Animated background gradient -->
-    <div class="animated-bg"></div>
-    <div class="grid-bg" aria-hidden="true"></div>
-    <!-- Scroll progress indicator -->
-    <div class="scroll-progress"></div>
-    <!-- ***** Header ***** -->
+    <a class="skip" href="#main">Skip to content</a>
 
-    <header class="header" role="banner" id="top">
-      <div class="row">
-        <nav class="nav navimg nav--glass" role="navigation">
-          <img
-            src="./images/codeuiandy-logo.png"
-            alt="Andrew Okeke (CODE UI ANDY) Logo - Mobile and Web Developer, Consultant and YouTuber"
-          />
+    <canvas id="neural" aria-hidden="true"></canvas>
+    <div class="grid-overlay" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"></div>
 
-          <button
-            class="nav__toggle"
-            aria-label="Toggle navigation menu"
-            aria-expanded="false"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-
-          <ul class="nav__items">
-            <li class="nav__item">
-              <a href="#work" class="nav__link">Work</a>
-            </li>
-            <li class="nav__item">
-              <a href="#experience" class="nav__link">Experience</a>
-            </li>
-            <li class="nav__item">
-              <a href="#about" class="nav__link">About</a>
-            </li>
-            <li class="nav__item">
-              <a href="#contact" class="nav__link">Contact</a>
-            </li>
-            <li class="nav__item">
-              <a href="#contact" class="nav__link nav__cta">Hire me</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-      <div class="header__text-box row videoBg">
-        <div class="hero-glow hero-glow--1" aria-hidden="true"></div>
-        <div class="hero-glow hero-glow--2" aria-hidden="true"></div>
-        <div class="vmimgText">
-          <p class="hero-badge">Senior React &amp; React Native · Lagos, Nigeria</p>
-          <h1 class="heading-primary">
-            <span class="heading-primary__name">Andrew Okeke</span>
-            <span class="heading-primary__brand">
-              <span class="text-gradient">CODE UI</span> ANDY
-            </span>
-          </h1>
-          <p class="hero-description">
-            5+ years building high-performance React &amp; React Native apps for
-            web and mobile—AI products, marketplaces, and experiences used across
-            Africa, North America, and beyond.
-          </p>
-          <div class="hero-actions">
-            <a href="#contact" class="btn btn--pink">Get in touch</a>
-            <a href="#work" class="btn btn--ghost">View my work</a>
-          </div>
-          <ul class="hero-stats" aria-label="Focus areas">
-            <li><strong>React.js</strong><span>Web apps</span></li>
-            <li><strong>React Native</strong><span>Mobile apps</span></li>
-            <li><strong>Consulting</strong><span>Product &amp; UI</span></li>
-          </ul>
-        </div>
-
-        <div class="vmimg vmimg--premium">
-          <div class="vmimg__ring" aria-hidden="true"></div>
-          <video
-            id="myVideo"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            poster="./images/codeuiandy.JPG"
-            loading="lazy"
-          >
-            <source src="./codeuiandy.m4v" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div class="video-loading" id="videoLoading">
-            <div class="loading-spinner"></div>
-          </div>
-        </div>
-      </div>
+    <!-- NAV -->
+    <header class="nav" id="nav">
+      <a href="#top" class="nav__brand" aria-label="Andrew Okeke — home">
+        <img class="nav__logo" src="./images/codeuiandy-logo.png" alt="CODE UI ANDY logo" width="40" height="40" />
+        <span class="nav__name">andrew<span class="accent">.ai</span></span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#process">Engage</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact" class="btn btn--sm btn--primary">Hire me</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span>
+      </button>
     </header>
 
-    <main role="main" class="main-content">
-      <!-- ***** Experience ***** -->
-
-      <section class="experience" id="experience">
-        <div class="row">
-          <p class="section-label">Experience</p>
-          <h2>Where I've Built</h2>
-          <p class="section-intro">
-            From fintech and banking to edtech and remote US product teams—roles
-            where I've led frontend delivery and shipped production apps.
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div class="hero__copy">
+          <p class="status reveal">
+            <span class="status__dot"></span>
+            Available for contracts · Remote worldwide
           </p>
+          <h1 class="hero__title reveal">
+            I engineer <span class="gradient-text">AI products</span><br />
+            that actually ship.
+          </h1>
+          <p class="hero__role reveal">
+            <span class="mono">&gt;</span>
+            <span id="typer" class="mono">AI Software Engineer</span><span class="caret"></span>
+          </p>
+          <p class="hero__lead reveal">
+            I'm <strong>Andrew Okeke</strong>, a senior AI software engineer and contractor with 5+ years
+            shipping production web &amp; mobile apps. I build LLM-powered assistants, retrieval over company
+            data, and polished interfaces that make AI useful to real users.
+          </p>
+          <div class="hero__cta reveal">
+            <a href="#contact" class="btn btn--primary magnetic">
+              Start a contract
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </a>
+            <a href="#work" class="btn btn--ghost magnetic">See AI work</a>
+          </div>
 
-          <ol class="experience__timeline">
-            <li class="experience__item experience__item--current">
-              <div class="experience__marker" aria-hidden="true"></div>
-              <article class="experience__card">
-                <div class="experience__card-top">
-                  <img
-                    src="./images/unionsystem.png"
-                    class="experience__logo"
-                    alt=""
-                    width="48"
-                    height="48"
-                  />
-                  <div class="experience__heading">
-                    <h3>Senior Software Engineer</h3>
-                    <p class="experience__company">Union Systems Limited</p>
-                  </div>
-                  <span class="experience__badge">Present</span>
-                </div>
-                <div class="experience__meta">
-                  <span>Full-time · Hybrid</span>
-                  <span>Sep 2023 – Present</span>
-                  <span>Lagos State, Nigeria</span>
-                </div>
-                <p class="experience__role">Frontend Team Lead</p>
-                <p class="experience__desc">
-                  Lead the React.js frontend engineering team in building
-                  secure, scalable, and high-performance web applications.
-                </p>
-                <ul class="experience__skills" aria-label="Skills">
-                  <li>Front-End Development</li>
-                  <li>React Native</li>
-                  <li>React.js</li>
-                  <li>TypeScript</li>
-                </ul>
-              </article>
-            </li>
+          <dl class="stats reveal">
+            <div><dt><span class="count" data-to="5">0</span>+</dt><dd>Years shipping</dd></div>
+            <div><dt><span class="count" data-to="10">0</span>+</dt><dd>Products launched</dd></div>
+            <div><dt><span class="count" data-to="3">0</span></dt><dd>AI platforms built</dd></div>
+            <div><dt>&lt;<span class="count" data-to="24">0</span>h</dt><dd>Reply time</dd></div>
+          </dl>
+        </div>
 
-            <li class="experience__item">
-              <div class="experience__marker" aria-hidden="true"></div>
-              <article class="experience__card">
-                <div class="experience__card-top">
-                  <img
-                    src="./images/breezelearn-mark.png"
-                    class="experience__logo experience__logo--dark"
-                    alt="BreezeLearn"
-                    width="48"
-                    height="48"
-                  />
-                  <div class="experience__heading">
-                    <h3>Senior Software Engineer</h3>
-                    <p class="experience__company">
-                      <a href="https://breezelearn.com/" target="_blank" rel="noopener noreferrer"
-                        >BreezeLearn</a
-                      >
-                    </p>
-                  </div>
-                  <span class="experience__badge experience__badge--muted"
-                    >Contract</span
-                  >
-                </div>
-                <div class="experience__meta">
-                  <span>Contract · Remote</span>
-                  <span>Jul 2022 – Aug 2023</span>
-                  <span>United States</span>
-                </div>
-                <p class="experience__desc">
-                  Developed mobile and web applications with a focus on user
-                  experience and accessibility. Sole frontend engineer for the
-                  BONNEE app, delivering high-quality releases end to end.
-                </p>
-                <ul class="experience__skills" aria-label="Skills">
-                  <li>Front-End Development</li>
-                  <li>React Native</li>
-                  <li>React.js</li>
-                </ul>
-              </article>
-            </li>
-
-            <li class="experience__item">
-              <div class="experience__marker" aria-hidden="true"></div>
-              <article class="experience__card">
-                <div class="experience__card-top">
-                  <img
-                    src="./images/sterling-bank-logo.png"
-                    class="experience__logo"
-                    alt=""
-                    width="48"
-                    height="48"
-                  />
-                  <div class="experience__heading">
-                    <h3>Frontend Developer</h3>
-                    <p class="experience__company">Sterling Bank</p>
-                  </div>
-                </div>
-                <div class="experience__meta">
-                  <span>Full-time · Remote</span>
-                  <span>Jun 2021 – Jun 2022</span>
-                  <span>Lagos State, Nigeria</span>
-                </div>
-                <p class="experience__desc">
-                  Built and maintained React and React Native interfaces for
-                  banking digital products used by customers across Nigeria.
-                </p>
-                <ul class="experience__skills" aria-label="Skills">
-                  <li>Front-End Development</li>
-                  <li>React Native</li>
-                  <li>React.js</li>
-                </ul>
-              </article>
-            </li>
-
-            <li class="experience__item">
-              <div class="experience__marker" aria-hidden="true"></div>
-              <article class="experience__card">
-                <div class="experience__card-top">
-                  <img
-                    src="./images/itskills.jpeg"
-                    class="experience__logo"
-                    alt=""
-                    width="48"
-                    height="48"
-                  />
-                  <div class="experience__heading">
-                    <h3>Frontend Developer</h3>
-                    <p class="experience__company">ITSkillsCenter</p>
-                  </div>
-                </div>
-                <div class="experience__meta">
-                  <span>Full-time · On-site</span>
-                  <span>Jan 2020 – May 2021</span>
-                  <span>Lagos State, Nigeria</span>
-                </div>
-                <p class="experience__desc">
-                  Developed responsive frontend interfaces and grew foundational
-                  skills in modern web development and UI implementation.
-                </p>
-                <ul class="experience__skills" aria-label="Skills">
-                  <li>Front-End Development</li>
-                  <li>JavaScript</li>
-                  <li>HTML &amp; CSS</li>
-                </ul>
-              </article>
-            </li>
-          </ol>
-
-          <div class="experience__collaborators">
-            <p class="experience__collaborators-label">Also shipped with</p>
-            <div class="client__logos">
-              <div>
-                <img
-                  src="./images/soar.jpeg"
-                  class="client__logo"
-                  alt="Soar Digital"
-                />
-                <span>Soar Digital</span>
-              </div>
-              <div>
-                <img
-                  src="./images/tremendoc.jpeg"
-                  class="client__logo"
-                  alt="Tremendoc"
-                />
-                <span>Tremendoc</span>
-              </div>
-              <div>
-                <img
-                  src="./images/alphacx.jpeg"
-                  class="client__logo"
-                  alt="AlphaCX"
-                />
-                <span>AlphaCX</span>
-              </div>
-              <div>
-                <img
-                  src="./images/paysync.jpeg"
-                  class="client__logo"
-                  alt="Paysync"
-                />
-                <span>Paysync</span>
-              </div>
+        <div class="hero__visual reveal">
+          <div class="orb" aria-hidden="true"></div>
+          <div class="console tilt" aria-label="Animated agent console">
+            <div class="console__bar">
+              <span></span><span></span><span></span>
+              <p class="mono">agent.session — andrew@ai</p>
             </div>
+            <pre class="console__body mono" id="console"></pre>
+            <div class="console__foot mono">
+              <span class="pill pill--live">● live</span>
+              <span>latency <b id="latency">142</b>ms</span>
+              <span>tokens <b id="tokens">0</b></span>
+            </div>
+          </div>
+        </div>
+
+        <a href="#services" class="scroll-hint" aria-label="Scroll down"><span></span></a>
+      </section>
+
+      <!-- MARQUEE -->
+      <section class="marquee" aria-label="Technologies">
+        <div class="marquee__track">
+          <span>LLM APIs</span><span>RAG</span><span>AI Agents</span><span>Tool Calling</span><span>Vector Search</span>
+          <span>Prompt Engineering</span><span>TypeScript</span><span>React</span><span>Next.js</span><span>React Native</span>
+          <span>Node.js</span><span>Python</span><span>Streaming UIs</span><span>REST &amp; GraphQL</span><span>Firebase</span>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="section" id="services">
+        <header class="section__head reveal">
+          <p class="eyebrow mono">01 / Services</p>
+          <h2>What I build for clients</h2>
+          <p>End-to-end AI features, from model integration to the interface your users touch.</p>
+        </header>
+
+        <div class="cards">
+          <article class="card spot reveal">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z" /><path d="M8 10h8M8 13h5" /></svg>
+            </div>
+            <h3>LLM apps &amp; assistants</h3>
+            <p>Chat assistants, copilots and streaming interfaces built on modern LLM APIs, with guardrails and good UX.</p>
+          </article>
+          <article class="card spot reveal">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6" /><path d="M20 20l-4.5-4.5M8.5 11h5M11 8.5v5" /></svg>
+            </div>
+            <h3>RAG &amp; knowledge search</h3>
+            <p>Grounded answers from your documents, filings and knowledge bases, with sources users can trust.</p>
+          </article>
+          <article class="card spot reveal">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24"><rect x="5" y="7" width="14" height="11" rx="3" /><path d="M12 3v4M9 12h.01M15 12h.01M2 12h3M19 12h3" /></svg>
+            </div>
+            <h3>AI agents &amp; automation</h3>
+            <p>Tool-calling workflows that handle support tickets, triage and repetitive operations around the clock.</p>
+          </article>
+          <article class="card spot reveal">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2" /><path d="M8 21h8M12 17v4" /></svg>
+            </div>
+            <h3>AI product frontends</h3>
+            <p>Fast, accessible React &amp; Next.js apps that turn AI capabilities into products people pay for.</p>
+          </article>
+          <article class="card spot reveal">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2.5" /><path d="M11 18h2" /></svg>
+            </div>
+            <h3>Mobile apps</h3>
+            <p>Production iOS &amp; Android apps in React Native, shipped to the US and African markets.</p>
+          </article>
+          <article class="card spot reveal">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z" /><path d="M9 12l2 2 4-4" /></svg>
+            </div>
+            <h3>Tech lead &amp; consulting</h3>
+            <p>Architecture, code review and team leadership. I lead a frontend team today and can slot into yours.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- WORK -->
+      <section class="section" id="work">
+        <header class="section__head reveal">
+          <p class="eyebrow mono">02 / Selected work</p>
+          <h2>Products in production</h2>
+          <p>AI platforms, marketplaces and apps used by real customers.</p>
+        </header>
+
+        <div class="filters reveal" role="tablist" aria-label="Filter projects">
+          <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter" data-filter="ai" role="tab" aria-selected="false">AI</button>
+          <button class="filter" data-filter="web" role="tab" aria-selected="false">Web</button>
+          <button class="filter" data-filter="mobile" role="tab" aria-selected="false">Mobile</button>
+        </div>
+
+        <div class="projects">
+          <article class="project project--feature spot reveal" data-cat="ai web">
+            <div class="project__media"><img src="./images/answir.png" alt="Answir platform screenshot" loading="lazy" /></div>
+            <div class="project__body">
+              <span class="tag tag--ai">AI · Investor relations</span>
+              <h3>Answir</h3>
+              <p>AI investor-relations platform that answers investor questions instantly and accurately from public filings, so IR teams can focus on strategy instead of admin.</p>
+              <ul class="chips"><li>React</li><li>LLM</li><li>Retrieval</li><li>SCSS</li></ul>
+              <a href="https://answir.ai/" target="_blank" rel="noopener noreferrer" class="link">Visit live site →</a>
+            </div>
+          </article>
+
+          <article class="project project--feature spot reveal" data-cat="ai web">
+            <div class="project__media"><img src="./images/breezeflow.png" alt="Breezeflow platform screenshot" loading="lazy" /></div>
+            <div class="project__body">
+              <span class="tag tag--ai">AI · Customer support</span>
+              <h3>Breezeflow</h3>
+              <p>24/7 AI customer support platform with intelligent responses that cut wait times. Includes onboarding and auth flows with email and Google sign-in.</p>
+              <ul class="chips"><li>React</li><li>AI support</li><li>Auth</li></ul>
+              <a href="https://www.breezeflow.io/" target="_blank" rel="noopener noreferrer" class="link">Visit live site →</a>
+            </div>
+          </article>
+
+          <article class="project spot reveal" data-cat="ai web">
+            <div class="project__media"><img src="./images/cozyintro.png" alt="CozyIntro screenshot" loading="lazy" /></div>
+            <div class="project__body">
+              <span class="tag tag--ai">AI · Creator economy</span>
+              <h3>CozyIntro</h3>
+              <p>Fan-engagement experience from the BreezeGPT family, helping creators build deeper connections and new revenue.</p>
+              <a href="https://cozyintro.breezegpt.io/" target="_blank" rel="noopener noreferrer" class="link">Visit →</a>
+            </div>
+          </article>
+
+          <article class="project spot reveal" data-cat="mobile">
+            <div class="project__media"><img src="./images/bonnee.png" alt="BONNEE app screenshot" loading="lazy" /></div>
+            <div class="project__body">
+              <span class="tag">Mobile · US market</span>
+              <h3>BONNEE</h3>
+              <p>Clothing-swap app. I was the sole frontend engineer, shipping it end to end in React Native.</p>
+              <a href="https://www.bonnee.co/" target="_blank" rel="noopener noreferrer" class="link">Visit →</a>
+            </div>
+          </article>
+
+          <article class="project spot reveal" data-cat="web">
+            <div class="project__media"><img src="./images/retinalogik.png" alt="RetinaLogik screenshot" loading="lazy" /></div>
+            <div class="project__body">
+              <span class="tag">Health tech</span>
+              <h3>RetinaLogik</h3>
+              <p>Portable VR visual-field testing for eye clinics, with multilingual patient guidance.</p>
+              <a href="https://www.retinalogik.com/" target="_blank" rel="noopener noreferrer" class="link">Visit →</a>
+            </div>
+          </article>
+
+          <article class="project spot reveal" data-cat="mobile">
+            <div class="project__media"><img src="./images/omnibiz-retail.png" alt="Omnibiz Retail screenshot" loading="lazy" /></div>
+            <div class="project__body">
+              <span class="tag">Mobile · B2B retail</span>
+              <h3>Omnibiz Retail</h3>
+              <p>FMCG restocking app: 900+ products, flexible payments and delivery tracking.</p>
+              <a href="https://play.google.com/store/apps/details?id=com.omnibiz.retail" target="_blank" rel="noopener noreferrer" class="link">Play Store →</a>
+            </div>
+          </article>
+
+          <article class="project spot reveal" data-cat="web">
+            <div class="project__media"><img src="./images/p1.png" alt="Tremendoc screenshot" loading="lazy" /></div>
+            <div class="project__body">
+              <span class="tag">Telemedicine</span>
+              <h3>Tremendoc</h3>
+              <p>24-hour virtual healthcare platform making care accessible and affordable.</p>
+              <a href="https://tremendoc.com/" target="_blank" rel="noopener noreferrer" class="link">Visit →</a>
+            </div>
+          </article>
+
+          <article class="project spot reveal" data-cat="web">
+            <div class="project__media"><img src="./images/colagig.png" alt="Collar Gig screenshot" loading="lazy" /></div>
+            <div class="project__body">
+              <span class="tag">Marketplace</span>
+              <h3>Collar Gig</h3>
+              <p>Connecting African freelancers with global businesses.</p>
+              <a href="https://collargig.com/" target="_blank" rel="noopener noreferrer" class="link">Visit →</a>
+            </div>
+          </article>
+
+          <article class="project spot reveal" data-cat="mobile">
+            <div class="project__media"><img src="./images/erider.png" alt="Erider app screenshot" loading="lazy" /></div>
+            <div class="project__body">
+              <span class="tag">Mobile · Logistics</span>
+              <h3>Erider</h3>
+              <p>On-demand shipments that auto-assign the nearest courier for pickup.</p>
+              <a href="https://play.google.com/store/apps/details?id=com.erider" target="_blank" rel="noopener noreferrer" class="link">Play Store →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- PROCESS / CONTRACT -->
+      <section class="section" id="process">
+        <header class="section__head reveal">
+          <p class="eyebrow mono">03 / Working together</p>
+          <h2>Built for contract engagements</h2>
+          <p>Clear scope, weekly demos and production-ready handover. I've worked remotely with US teams since 2022.</p>
+        </header>
+
+        <ol class="steps">
+          <li class="step reveal"><span class="step__n mono">01</span><h3>Discovery</h3><p>A short call to understand the problem, users, data and success metrics.</p></li>
+          <li class="step reveal"><span class="step__n mono">02</span><h3>Scope &amp; prototype</h3><p>A written plan, an estimate and a quick AI prototype to prove feasibility early.</p></li>
+          <li class="step reveal"><span class="step__n mono">03</span><h3>Build in sprints</h3><p>Weekly demos, async updates and clean, typed, reviewed code in your repo.</p></li>
+          <li class="step reveal"><span class="step__n mono">04</span><h3>Ship &amp; hand over</h3><p>Deployment, evaluation checks, documentation and support after launch.</p></li>
+        </ol>
+
+        <div class="models">
+          <div class="model spot reveal">
+            <h3>Project</h3>
+            <p>Fixed scope and timeline. Ideal for an AI MVP, a new feature or a proof of concept.</p>
+          </div>
+          <div class="model model--hl spot reveal">
+            <span class="pill">Most popular</span>
+            <h3>Monthly retainer</h3>
+            <p>Dedicated hours each month for ongoing AI features, iteration and maintenance.</p>
+          </div>
+          <div class="model spot reveal">
+            <h3>Team augmentation</h3>
+            <p>I join your team as a senior engineer or tech lead, in your tools and rituals.</p>
           </div>
         </div>
       </section>
 
-      <!-- ***** About ***** -->
+      <!-- EXPERIENCE -->
+      <section class="section" id="experience">
+        <header class="section__head reveal">
+          <p class="eyebrow mono">04 / Experience</p>
+          <h2>Where I've built</h2>
+        </header>
 
-      <section class="about" id="about">
-        <div class="row">
-          <p class="section-label">About</p>
-          <h2>About Me</h2>
-          <p class="section-intro">
-            Developer, consultant, and creator behind CODE UI ANDY—focused on
-            shipping interfaces people actually enjoy using.
-          </p>
-          <div class="about__content">
-            <div class="about__text">
-              <!-- Replace the below paragraph with info about yourself -->
-              <p>
-                I'm Andrew Okeke, also known as CODE UI ANDY—a Senior React.js
-                &amp; React Native developer based in Lagos, Nigeria, with 5+
-                years building high-performance web and mobile apps. I lead
-                frontend teams, ship TypeScript-first products, and consult on
-                UI that holds up in production. As a YouTuber, I share practical
-                lessons on React, React Native, and modern frontend craft.
-              </p>
-              <ul class="skills-list" aria-label="Core skills">
-                <li>React.js</li>
-                <li>React Native</li>
-                <li>TypeScript</li>
-                <li>Next.js</li>
-                <li>UI/UX</li>
-                <li>REST APIs</li>
-                <li>Consulting</li>
-              </ul>
-              <a href="mailto:frostandy41@gmail.com" class="btn btn--pink"
-                >Email me</a
-              >
+        <div class="timeline">
+          <div class="tl reveal">
+            <img src="./images/unionsystem.png" alt="" class="tl__logo" width="44" height="44" />
+            <div>
+              <p class="tl__date mono">Sep 2023 — Present · Lagos · Hybrid</p>
+              <h3>Senior Software Engineer · Frontend Team Lead</h3>
+              <p class="tl__co">Union Systems Limited</p>
+              <p>Lead the React frontend team building secure, scalable, high-performance web applications.</p>
             </div>
-
-            <div class="about__photo-container">
-              <!-- Add a nice photo of yourself -->
-              <img
-                class="about__photo"
-                src="./images/codeuiandy.jpg"
-                alt="Andrew Okeke (CODE UI ANDY) - Mobile and Web Developer, Consultant and YouTuber based in Lagos, Nigeria. Specializing in React.js and React Native."
-              />
+          </div>
+          <div class="tl reveal">
+            <img src="./images/breezelearn-mark.png" alt="" class="tl__logo tl__logo--light" width="44" height="44" />
+            <div>
+              <p class="tl__date mono">Jul 2022 — Aug 2023 · United States · Remote contract</p>
+              <h3>Senior Software Engineer</h3>
+              <p class="tl__co">BreezeLearn</p>
+              <p>Built web and mobile apps across the BreezeGPT product family, including AI products. Sole frontend engineer on BONNEE.</p>
+            </div>
+          </div>
+          <div class="tl reveal">
+            <img src="./images/sterling-bank-logo.png" alt="" class="tl__logo" width="44" height="44" />
+            <div>
+              <p class="tl__date mono">Jun 2021 — Jun 2022 · Remote</p>
+              <h3>Frontend Developer</h3>
+              <p class="tl__co">Sterling Bank</p>
+              <p>React and React Native interfaces for banking products used by customers across Nigeria.</p>
+            </div>
+          </div>
+          <div class="tl reveal">
+            <img src="./images/itskills.jpeg" alt="" class="tl__logo" width="44" height="44" />
+            <div>
+              <p class="tl__date mono">Jan 2020 — May 2021 · Lagos</p>
+              <h3>Frontend Developer</h3>
+              <p class="tl__co">ITSkillsCenter</p>
+              <p>Responsive frontend interfaces and the foundations of modern web development.</p>
             </div>
           </div>
         </div>
+
+        <div class="clients reveal">
+          <p class="mono">Also shipped with</p>
+          <ul>
+            <li><img src="./images/soar.jpeg" alt="" />Soar Digital</li>
+            <li><img src="./images/tremendoc.jpeg" alt="" />Tremendoc</li>
+            <li><img src="./images/alphacx.jpeg" alt="" />AlphaCX</li>
+            <li><img src="./images/paysync.jpeg" alt="" />Paysync</li>
+          </ul>
+        </div>
       </section>
 
-      <!-- ***** Work ***** -->
-
-      <section class="work" id="work">
-        <div class="row">
-          <p class="section-label">Portfolio</p>
-          <h2>Selected Work</h2>
-          <p class="section-intro" id="workIntro">
-            A curated set of web and mobile products—AI platforms, marketplaces,
-            and apps in production today.
-          </p>
-          <div class="work__filters" role="tablist" aria-label="Filter projects">
-            <button
-              type="button"
-              class="work__filter work__filter--active"
-              data-filter="all"
-              role="tab"
-              aria-selected="true"
-            >
-              All
+      <!-- CONTACT -->
+      <section class="section contact" id="contact">
+        <div class="contact__card spot reveal">
+          <p class="eyebrow mono">05 / Contact</p>
+          <h2>Have an AI product to build?<br /><span class="gradient-text">Let's ship it.</span></h2>
+          <p>Tell me about your product, timeline and budget. I usually reply within 24 hours.</p>
+          <div class="contact__actions">
+            <a href="mailto:frostandy41@gmail.com?subject=AI%20contract%20enquiry" class="btn btn--primary magnetic">Email me</a>
+            <button type="button" class="btn btn--ghost" id="copyEmail" data-email="frostandy41@gmail.com">
+              <span class="mono">frostandy41@gmail.com</span><span class="copy-label">Copy</span>
             </button>
-            <button
-              type="button"
-              class="work__filter"
-              data-filter="web"
-              role="tab"
-              aria-selected="false"
-            >
-              Web
-            </button>
-            <button
-              type="button"
-              class="work__filter"
-              data-filter="mobile"
-              role="tab"
-              aria-selected="false"
-            >
-              Mobile
-            </button>
+            <a href="./Andrew%20Okeke.pdf" class="btn btn--ghost" download>Download CV</a>
           </div>
-          <div class="work__boxes">
-            <!-- Each div with the work__box class is a project. -->
-
-            <article
-              class="work__box"
-              data-category="web"
-              itemscope
-              itemtype="https://schema.org/SoftwareApplication"
-            >
-              <div class="work__text">
-                <h3 itemprop="name">Answir</h3>
-                <p itemprop="description">
-                  AI-driven investor relations platform that automates routine
-                  investor questions with instant, accurate answers sourced from
-                  public filings—helping IR teams focus on strategy instead of
-                  admin.
-                </p>
-                <ul class="work__list">
-                  <li>HTML</li>
-                  <li>SCSS</li>
-                  <li>JavaScript</li>
-                  <li>React.js</li>
-                </ul>
-
-                <div class="work__links">
-                  <a
-                    href="https://answir.ai/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="link__text"
-                    itemprop="url"
-                  >
-                    Visit Site <span>&rarr;</span>
-                  </a>
-                  <a
-                    href="https://github.com/codeuiandy"
-                    title="View Answir Source Code on GitHub"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="View Answir source code on GitHub"
-                  >
-                    <img
-                      src="./images/github.svg"
-                      class="work__code"
-                      alt="View Answir project source code on GitHub"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div class="work__image-box">
-                <img
-                  src="./images/answir.png"
-                  class="work__image"
-                  loading="lazy"
-                  decoding="async"
-                  alt="Answir - AI investor relations platform by CODE UI ANDY"
-                  itemprop="screenshot"
-                />
-              </div>
-            </article>
-
-            <article
-              class="work__box"
-              data-category="mobile"
-              itemscope
-              itemtype="https://schema.org/SoftwareApplication"
-            >
-              <div class="work__text">
-                <h3 itemprop="name">BONNEE</h3>
-                <p itemprop="description">
-                  Clothing swap mobile app I built—list pieces from your closet,
-                  earn Swap Coins, and trade for new-to-you fashion without
-                  buying or selling. Available in the USA market only.
-                </p>
-                <ul class="work__list">
-                  <li>React Native</li>
-                </ul>
-
-                <div class="work__links">
-                  <a
-                    href="https://www.bonnee.co/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="link__text"
-                    itemprop="url"
-                  >
-                    Visit Site <span>&rarr;</span>
-                  </a>
-                  <a
-                    href="https://github.com/codeuiandy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="View BONNEE Source Code on GitHub"
-                    aria-label="View BONNEE source code on GitHub"
-                  >
-                    <img
-                      src="./images/github.svg"
-                      class="work__code"
-                      alt="View BONNEE mobile app source code on GitHub"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div class="work__image-box">
-                <img
-                  src="./images/bonnee.png"
-                  class="work__image"
-                  loading="lazy"
-                  decoding="async"
-                  alt="BONNEE - Clothing swap mobile app by CODE UI ANDY"
-                  itemprop="screenshot"
-                />
-              </div>
-            </article>
-
-            <article
-              class="work__box"
-              data-category="web"
-              itemscope
-              itemtype="https://schema.org/SoftwareApplication"
-            >
-              <div class="work__text">
-                <h3 itemprop="name">RetinaLogik</h3>
-                <p itemprop="description">
-                  Next-generation vision testing for eye care clinics—the RVF200
-                  headset delivers portable, patient-friendly visual field exams
-                  with multilingual guidance and workflows built for modern
-                  optometry and ophthalmology practices.
-                </p>
-                <ul class="work__list">
-                  <li>HTML</li>
-                  <li>SCSS</li>
-                  <li>JavaScript</li>
-                  <li>React.js</li>
-                </ul>
-
-                <div class="work__links">
-                  <a
-                    href="https://www.retinalogik.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="link__text"
-                    itemprop="url"
-                  >
-                    Visit Site <span>&rarr;</span>
-                  </a>
-                  <a
-                    href="https://github.com/codeuiandy"
-                    title="View RetinaLogik Source Code on GitHub"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="View RetinaLogik source code on GitHub"
-                  >
-                    <img
-                      src="./images/github.svg"
-                      class="work__code"
-                      alt="View RetinaLogik project source code on GitHub"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div class="work__image-box">
-                <img
-                  src="./images/retinalogik.png"
-                  class="work__image"
-                  loading="lazy"
-                  decoding="async"
-                  alt="RetinaLogik - Vision testing platform by CODE UI ANDY"
-                  itemprop="screenshot"
-                />
-              </div>
-            </article>
-
-            <article
-              class="work__box"
-              data-category="web"
-              itemscope
-              itemtype="https://schema.org/SoftwareApplication"
-            >
-              <div class="work__text">
-                <h3 itemprop="name">Breezeflow</h3>
-                <p itemprop="description">
-                  24/7 AI customer support platform—delivers fast, reliable
-                  responses with an intelligent system that cuts wait times and
-                  keeps support seamless day and night. Includes sign-in and
-                  onboarding flows with email and Google authentication.
-                </p>
-                <ul class="work__list">
-                  <li>HTML</li>
-                  <li>SCSS</li>
-                  <li>JavaScript</li>
-                  <li>React.js</li>
-                </ul>
-
-                <div class="work__links">
-                  <a
-                    href="https://www.breezeflow.io/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="link__text"
-                    itemprop="url"
-                  >
-                    Visit Site <span>&rarr;</span>
-                  </a>
-                  <a
-                    href="https://github.com/codeuiandy"
-                    title="View Breezeflow Source Code on GitHub"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="View Breezeflow source code on GitHub"
-                  >
-                    <img
-                      src="./images/github.svg"
-                      class="work__code"
-                      alt="View Breezeflow project source code on GitHub"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div class="work__image-box">
-                <img
-                  src="./images/breezeflow.png"
-                  class="work__image"
-                  loading="lazy"
-                  decoding="async"
-                  alt="Breezeflow - AI customer support platform by CODE UI ANDY"
-                  itemprop="screenshot"
-                />
-              </div>
-            </article>
-
-            <article
-              class="work__box"
-              data-category="web"
-              itemscope
-              itemtype="https://schema.org/SoftwareApplication"
-            >
-              <div class="work__text">
-                <h3 itemprop="name">CozyIntro</h3>
-                <p itemprop="description">
-                  Fan engagement landing experience for creators who want deeper
-                  connections with their audience—bridging the gap between fans
-                  and influencers while opening new ways to grow income.
-                </p>
-                <ul class="work__list">
-                  <li>HTML</li>
-                  <li>SCSS</li>
-                  <li>JavaScript</li>
-                  <li>React.js</li>
-                </ul>
-
-                <div class="work__links">
-                  <a
-                    href="https://cozyintro.breezegpt.io/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="link__text"
-                    itemprop="url"
-                  >
-                    Visit Site <span>&rarr;</span>
-                  </a>
-                  <a
-                    href="https://github.com/codeuiandy"
-                    title="View CozyIntro Source Code on GitHub"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="View CozyIntro source code on GitHub"
-                  >
-                    <img
-                      src="./images/github.svg"
-                      class="work__code"
-                      alt="View CozyIntro project source code on GitHub"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div class="work__image-box">
-                <img
-                  src="./images/cozyintro.png"
-                  class="work__image"
-                  loading="lazy"
-                  decoding="async"
-                  alt="CozyIntro - Fan engagement platform by CODE UI ANDY"
-                  itemprop="screenshot"
-                />
-              </div>
-            </article>
-
-            <article
-              class="work__box"
-              data-category="mobile"
-              itemscope
-              itemtype="https://schema.org/SoftwareApplication"
-            >
-              <div class="work__text">
-                <h3 itemprop="name">Omnibiz Retail</h3>
-                <p itemprop="description">
-                  B2B FMCG retail mobile app I worked on—helps shop owners
-                  restock from 900+ products, place secure orders, pay with
-                  flexible options, and track fast delivery. Built for
-                  OmniRetail across Nigeria and beyond.
-                </p>
-                <ul class="work__list">
-                  <li>React Native</li>
-                </ul>
-
-                <div class="work__links">
-                  <a
-                    href="https://play.google.com/store/apps/details?id=com.omnibiz.retail"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="link__text"
-                    itemprop="url"
-                  >
-                    View on Play Store <span>&rarr;</span>
-                  </a>
-                  <a
-                    href="https://github.com/codeuiandy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="View Omnibiz Retail Source Code on GitHub"
-                    aria-label="View Omnibiz Retail source code on GitHub"
-                  >
-                    <img
-                      src="./images/github.svg"
-                      class="work__code"
-                      alt="View Omnibiz Retail mobile app source code on GitHub"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div class="work__image-box">
-                <img
-                  src="./images/omnibiz-retail.png"
-                  class="work__image"
-                  loading="lazy"
-                  decoding="async"
-                  alt="Omnibiz Retail - B2B FMCG mobile app by CODE UI ANDY"
-                  itemprop="screenshot"
-                />
-              </div>
-            </article>
-
-            <article
-              class="work__box"
-              data-category="web"
-              itemscope
-              itemtype="https://schema.org/SoftwareApplication"
-            >
-              <div class="work__text">
-                <h3 itemprop="name">Tremendoc</h3>
-                <p itemprop="description">
-                  Tremendoc Telemedicine Platform offers a 24 hours holistic
-                  virtual experience that provides accessible and affordable
-                  health care services through telemedicine
-                </p>
-                <ul class="work__list">
-                  <li>HTML</li>
-                  <li>SCSS</li>
-                  <li>JavaScript</li>
-                  <li>React.js</li>
-                </ul>
-
-                <div class="work__links">
-                  <a
-                    href="https://tremendoc.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="link__text"
-                    itemprop="url"
-                  >
-                    Visit Site <span>&rarr;</span>
-                  </a>
-                  <a
-                    href="https://github.com/codeuiandy"
-                    title="View Tremendoc Source Code on GitHub"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="View Tremendoc source code on GitHub"
-                  >
-                    <img
-                      src="./images/github.svg"
-                      class="work__code"
-                      alt="View Tremendoc project source code on GitHub"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div class="work__image-box">
-                <img
-                  src="./images/p1.png"
-                  class="work__image"
-                  loading="lazy"
-                  decoding="async"
-                  alt="Tremendoc Telemedicine Platform - Frontend development project by CODE UI ANDY"
-                  itemprop="screenshot"
-                />
-              </div>
-            </article>
-
-            <article
-              class="work__box"
-              data-category="web"
-              itemscope
-              itemtype="https://schema.org/SoftwareApplication"
-            >
-              <div class="work__text">
-                <h3 itemprop="name">Collar Gig</h3>
-                <p itemprop="description">
-                  Connecting African Freelancers & Global Businesses
-                </p>
-                <ul class="work__list">
-                  <li>HTML</li>
-                  <li>SCSS</li>
-                  <li>JavaScript</li>
-                  <li>React.js</li>
-                </ul>
-
-                <div class="work__links">
-                  <a
-                    href="https://collargig.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="link__text"
-                    itemprop="url"
-                  >
-                    Visit Site <span>&rarr;</span>
-                  </a>
-                  <a
-                    href="https://github.com/codeuiandy"
-                    title="View Collar Gig Source Code on GitHub"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="View Collar Gig source code on GitHub"
-                  >
-                    <img
-                      src="./images/github.svg"
-                      class="work__code"
-                      alt="View Collar Gig project source code on GitHub"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div class="work__image-box">
-                <img
-                  src="./images/colagig.png"
-                  class="work__image"
-                  loading="lazy"
-                  decoding="async"
-                  alt="Collar Gig - African Freelancers Platform - Frontend development project by CODE UI ANDY"
-                  itemprop="screenshot"
-                />
-              </div>
-            </article>
-
-            <div class="work__box" data-category="mobile">
-              <div class="work__text">
-                <h3>Erider Mobile App</h3>
-                <p>
-                  E&E app provides users quick and seamless shipment creation
-                  from the comfort of their homes and Offices, obliterating the
-                  need to go to logistic offices for forwarding or pick-ups of
-                  items to be dispatched. Once a request is made, the app
-                  locates a delivery courier nearest to the request and assigns
-                  the delivery request for pickup.
-                </p>
-                <ul class="work__list">
-                  <li>React Native</li>
-                </ul>
-
-                <div class="work__links">
-                  <a
-                    href="https://play.google.com/store/apps/details?id=com.erider"
-                    target="_blank"
-                    class="link__text"
-                  >
-                    Visit Site <span>&rarr;</span>
-                  </a>
-                  <a href="https://github.com/codeuiandy" target="_blank">
-                    <img
-                      src="./images/github.svg"
-                      class="work__code"
-                      title="View Source Code"
-                      alt="GitHub"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div class="work__image-box">
-                <img
-                  src="./images/erider.png"
-                  class="work__image"
-                  loading="lazy"
-                  decoding="async"
-                  alt="Project 1"
-                />
-              </div>
-            </div>
+          <div class="socials">
+            <a href="https://www.linkedin.com/in/codeuiandy/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/codeuiandy" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://twitter.com/codeuiandy" target="_blank" rel="noopener noreferrer">X / Twitter</a>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- ***** Contact ***** -->
-
-    <section class="contact" id="contact">
-      <div class="row">
-        <p class="section-label">Contact</p>
-        <h2>Get in Touch</h2>
-        <p class="section-intro">
-          Building something new? Tell me about your product—I usually reply
-          within 24 hours.
-        </p>
-        <div class="contact__grid">
-          <div class="contact__card contact__card--primary">
-            <span class="contact__card-label">Email</span>
-            <a
-              href="mailto:frostandy41@gmail.com"
-              class="contact__email"
-              id="contactEmail"
-              >frostandy41@gmail.com</a
-            >
-            <button type="button" class="contact__copy" id="copyEmail">
-              Copy address
-            </button>
-          </div>
-          <div class="contact__card">
-            <span class="contact__card-label">Let's talk about</span>
-            <ul class="contact__topics">
-              <li>Web &amp; mobile apps</li>
-              <li>React / React Native</li>
-              <li>UI polish &amp; consulting</li>
-            </ul>
-            <a href="mailto:frostandy41@gmail.com" class="btn btn--pink"
-              >Start a conversation</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ***** Footer ***** -->
-
-    <footer role="contentinfo" class="footer">
-      <div class="row">
-        <!-- Update the links to point to your accounts -->
-        <ul class="footer__social-links">
-          <li class="footer__social-link-item">
-            <a
-              href="https://twitter.com/codeuiandy"
-              title="Link to Twitter Profile"
-              target="_blank"
-            >
-              <img
-                src="./images/twitter.svg"
-                class="footer__social-image"
-                alt="Twitter"
-              />
-            </a>
-          </li>
-          <li class="footer__social-link-item">
-            <a
-              href="https://github.com/codeuiandy"
-              title="Link to Github Profile"
-              target="_blank"
-            >
-              <img
-                src="./images/github.svg"
-                class="footer__social-image"
-                alt="Github"
-              />
-            </a>
-          </li>
-
-          <li class="footer__social-link-item">
-            <a href="https://www.linkedin.com/in/codeuiandy/" target="_blank">
-              <img
-                src="./images/linkedin.svg"
-                title="Link to Linkedin Profile"
-                class="footer__social-image"
-                alt="Linkedin"
-              />
-            </a>
-          </li>
-        </ul>
-
-        <!-- If you give me some credit by keeping the below paragraph, will be huge for me 😊 Thanks. -->
-        <p>&copy;2026 - Andrew Okeke (CODE UI ANDY).</p>
-      </div>
+    <footer class="footer">
+      <p class="mono">© <span id="year">2026</span> Andrew Okeke · CODE UI ANDY</p>
+      <a href="./v1/" class="footer__link">Previous portfolio ↗</a>
     </footer>
 
-    <a href="#top" class="back-to-top" title="Back to Top">
-      <img
-        src="./images/arrow-up.svg"
-        alt="Back to Top"
-        class="back-to-top__image"
-      />
-    </a>
-    <script src="./index.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>

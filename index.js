@@ -1,362 +1,284 @@
-/* -----------------------------------------
-  Have focus outline only for keyboard users 
- ---------------------------------------- */
+/* Andrew Okeke — AI Software Engineer portfolio (v2) */
+document.documentElement.classList.remove("no-js");
+(() => {
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const fine = window.matchMedia("(pointer: fine)").matches;
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 
-const handleFirstTab = (e) => {
-  if (e.key === "Tab") {
-    document.body.classList.add("user-is-tabbing");
+  /* ---------- Neural network background ---------- */
+  const canvas = $("#neural");
+  if (canvas && !reduce) {
+    const ctx = canvas.getContext("2d");
+    const mouse = { x: -9999, y: -9999 };
+    let w, h, dpr, nodes = [], pulses = [];
 
-    window.removeEventListener("keydown", handleFirstTab);
-    window.addEventListener("mousedown", handleMouseDownOnce);
-  }
-};
+    const resize = () => {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = canvas.width = innerWidth * dpr;
+      h = canvas.height = innerHeight * dpr;
+      const count = Math.min(90, Math.floor((innerWidth * innerHeight) / 16000));
+      nodes = Array.from({ length: count }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.25 * dpr,
+        vy: (Math.random() - 0.5) * 0.25 * dpr,
+        r: (Math.random() * 1.4 + 0.6) * dpr,
+      }));
+    };
+    resize();
+    addEventListener("resize", resize);
+    addEventListener("pointermove", (e) => { mouse.x = e.clientX * dpr; mouse.y = e.clientY * dpr; });
 
-const handleMouseDownOnce = () => {
-  document.body.classList.remove("user-is-tabbing");
+    const LINK = 140;
+    const tick = () => {
+      ctx.clearRect(0, 0, w, h);
+      const link = LINK * dpr;
 
-  window.removeEventListener("mousedown", handleMouseDownOnce);
-  window.addEventListener("keydown", handleFirstTab);
-};
-
-window.addEventListener("keydown", handleFirstTab);
-
-const backToTopButton = document.querySelector(".back-to-top");
-let isBackToTopRendered = false;
-
-let alterStyles = (isBackToTopRendered) => {
-  backToTopButton.style.visibility = isBackToTopRendered ? "visible" : "hidden";
-  backToTopButton.style.opacity = isBackToTopRendered ? 1 : 0;
-  backToTopButton.style.transform = isBackToTopRendered
-    ? "scale(1)"
-    : "scale(0)";
-};
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 700) {
-    isBackToTopRendered = true;
-    alterStyles(isBackToTopRendered);
-  } else {
-    isBackToTopRendered = false;
-    alterStyles(isBackToTopRendered);
-  }
-  
-  // Add scrolled class to navigation
-  const nav = document.querySelector('.nav');
-  if (nav) {
-    if (window.scrollY > 100) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  }
-  
-  // Parallax effect for background particles
-  const scrolled = window.pageYOffset;
-  const parallax = document.querySelector('body::after');
-  if (parallax) {
-    const speed = scrolled * 0.5;
-    document.documentElement.style.setProperty('--scroll', `${speed}px`);
-  }
-});
-
-// Intersection Observer for scroll animations
-const observerOptions = {
-  threshold: 0.05,
-  rootMargin: '0px 0px 50px 0px' // Trigger 50px before element enters viewport
-};
-
-// Separate observer for work boxes with earlier trigger
-const workObserverOptions = {
-  threshold: 0.05,
-  rootMargin: '0px 0px 100px 0px' // Trigger 100px before element enters viewport
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      // Optional: stop observing after animation
-      // observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-
-const workObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, workObserverOptions);
-
-// Mobile Navigation Toggle
-document.addEventListener('DOMContentLoaded', () => {
-  // Project count in work intro
-  const workIntro = document.getElementById('workIntro');
-  const projectCount = document.querySelectorAll('.work__boxes > .work__box').length;
-  if (workIntro && projectCount > 0) {
-    workIntro.textContent = `${projectCount} shipped products across AI, health, retail, and creator tools—live in production today.`;
-  }
-
-  // Copy email
-  const copyBtn = document.getElementById('copyEmail');
-  const contactEmail = document.getElementById('contactEmail');
-  if (copyBtn && contactEmail) {
-    copyBtn.addEventListener('click', async () => {
-      const email = contactEmail.textContent.trim();
-      try {
-        await navigator.clipboard.writeText(email);
-        copyBtn.textContent = 'Copied!';
-        copyBtn.classList.add('copied');
-        setTimeout(() => {
-          copyBtn.textContent = 'Copy address';
-          copyBtn.classList.remove('copied');
-        }, 2000);
-      } catch {
-        window.location.href = `mailto:${email}`;
+      for (const n of nodes) {
+        n.x += n.vx; n.y += n.vy;
+        if (n.x < 0 || n.x > w) n.vx *= -1;
+        if (n.y < 0 || n.y > h) n.vy *= -1;
+        const dx = n.x - mouse.x, dy = n.y - mouse.y, d = Math.hypot(dx, dy);
+        if (d < 160 * dpr) { n.x += (dx / d) * 0.6; n.y += (dy / d) * 0.6; }
       }
-    });
-  }
 
-  // Cursor glow (desktop, motion allowed)
-  const cursorGlow = document.getElementById('cursorGlow');
-  const prefersReducedMotion = window.matchMedia(
-    '(prefers-reduced-motion: reduce)'
-  ).matches;
-  if (cursorGlow && !prefersReducedMotion && window.matchMedia('(pointer: fine)').matches) {
-    document.body.classList.add('has-cursor-glow');
-    window.addEventListener('mousemove', (e) => {
-      cursorGlow.style.left = `${e.clientX}px`;
-      cursorGlow.style.top = `${e.clientY}px`;
-    });
-  }
-
-  // Subtle tilt on project images
-  if (!prefersReducedMotion && window.matchMedia('(pointer: fine)').matches) {
-    document.querySelectorAll('.work__image-box').forEach((box) => {
-      box.addEventListener('mousemove', (e) => {
-        const rect = box.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5;
-        const y = (e.clientY - rect.top) / rect.height - 0.5;
-        const img = box.querySelector('.work__image');
-        if (img) {
-          img.style.transform = `scale(1.03) rotateX(${y * -4}deg) rotateY(${x * 4}deg)`;
-        }
-      });
-      box.addEventListener('mouseleave', () => {
-        const img = box.querySelector('.work__image');
-        if (img) img.style.transform = '';
-      });
-    });
-  }
-
-  // Work filters
-  const workFilters = document.querySelectorAll('.work__filter');
-  const workBoxes = document.querySelectorAll('.work__boxes > .work__box');
-
-  workFilters.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const filter = btn.dataset.filter;
-      workFilters.forEach((b) => {
-        const active = b === btn;
-        b.classList.toggle('work__filter--active', active);
-        b.setAttribute('aria-selected', active ? 'true' : 'false');
-      });
-      workBoxes.forEach((box) => {
-        const category = box.dataset.category;
-        const show = filter === 'all' || category === filter;
-        box.classList.toggle('is-hidden', !show);
-        if (show) box.classList.add('visible');
-      });
-    });
-  });
-
-  const navToggle = document.querySelector('.nav__toggle');
-  const navItems = document.querySelector('.nav__items');
-  const navLinks = document.querySelectorAll('.nav__link');
-
-  if (navToggle && navItems) {
-    navToggle.addEventListener('click', () => {
-      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', !isExpanded);
-      navItems.classList.toggle('active');
-      document.body.style.overflow = !isExpanded ? 'hidden' : '';
-    });
-
-    // Close menu when clicking on a link
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navToggle.setAttribute('aria-expanded', 'false');
-        navItems.classList.remove('active');
-        document.body.style.overflow = '';
-      });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!navItems.contains(e.target) && !navToggle.contains(e.target)) {
-        navToggle.setAttribute('aria-expanded', 'false');
-        navItems.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
-  }
-});
-
-// Observe all sections
-document.addEventListener('DOMContentLoaded', () => {
-  // Observe sections
-  const sections = document.querySelectorAll('section');
-  sections.forEach(section => {
-    observer.observe(section);
-  });
-
-  // Observe work boxes with stagger delay - use workObserver for earlier trigger
-  const workBoxes = document.querySelectorAll('.work__box');
-  workBoxes.forEach((box, index) => {
-    box.style.transitionDelay = `${index * 0.1}s`;
-    workObserver.observe(box);
-  });
-
-  // Observe experience timeline items + client logos with stagger delay
-  const experienceItems = document.querySelectorAll('.experience__item');
-  experienceItems.forEach((item, index) => {
-    item.style.transitionDelay = `${index * 0.12}s`;
-    observer.observe(item);
-  });
-
-  const clientLogos = document.querySelectorAll('.client__logos div');
-  clientLogos.forEach((logo, index) => {
-    logo.style.transitionDelay = `${index * 0.1}s`;
-    observer.observe(logo);
-  });
-
-  // Observe section labels and key headings only
-  document.querySelectorAll('.section-label, .work__text h3').forEach((el) => {
-    el.classList.add('fade-in');
-    observer.observe(el);
-  });
-
-  // Observe about photo
-  const aboutPhoto = document.querySelector('.about__photo');
-  if (aboutPhoto) {
-    aboutPhoto.classList.add('scale-in');
-    observer.observe(aboutPhoto);
-  }
-
-  // Observe contact info
-  const contactInfo = document.querySelector('.contact__info');
-  if (contactInfo) {
-    contactInfo.classList.add('fade-in');
-    observer.observe(contactInfo);
-  }
-
-  // Observe header text and video
-  const vmimgText = document.querySelector('.vmimgText');
-  const vmimg = document.querySelector('.vmimg');
-  if (vmimgText) {
-    setTimeout(() => {
-      vmimgText.classList.add('visible');
-    }, 200);
-  }
-  if (vmimg) {
-    setTimeout(() => {
-      vmimg.classList.add('visible');
-    }, 400);
-  }
-
-  // Optimize video loading
-  const video = document.getElementById('myVideo');
-  const videoLoading = document.getElementById('videoLoading');
-  
-  if (video && videoLoading) {
-    // Show loading spinner
-    videoLoading.classList.remove('hidden');
-    
-    // Load video metadata first, then play
-    video.addEventListener('loadedmetadata', () => {
-      // Video metadata loaded, start playing
-      video.play().catch(() => {
-        // Autoplay blocked, show loading until user interaction
-        console.log('Autoplay blocked');
-      });
-    });
-    
-    // Hide loading spinner when video can play
-    video.addEventListener('canplay', () => {
-      video.classList.add('loaded');
-      setTimeout(() => {
-        videoLoading.classList.add('hidden');
-      }, 300);
-    });
-    
-    // Handle video loading errors
-    video.addEventListener('error', () => {
-      videoLoading.classList.add('hidden');
-      console.error('Video loading error');
-    });
-    
-    // Intersection Observer for lazy loading video
-    const videoObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Video is in viewport, start loading
-          if (video.readyState === 0) {
-            video.load();
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const a = nodes[i], b = nodes[j];
+          const d = Math.hypot(a.x - b.x, a.y - b.y);
+          if (d < link) {
+            ctx.strokeStyle = `rgba(139,92,246,${(1 - d / link) * 0.28})`;
+            ctx.lineWidth = dpr * 0.8;
+            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+            if (Math.random() < 0.0009) pulses.push({ a, b, t: 0 });
           }
-          videoObserver.unobserve(entry.target);
         }
+      }
+
+      pulses = pulses.filter((p) => (p.t += 0.02) < 1);
+      for (const p of pulses) {
+        const x = p.a.x + (p.b.x - p.a.x) * p.t, y = p.a.y + (p.b.y - p.a.y) * p.t;
+        ctx.fillStyle = "rgba(34,211,238,0.95)";
+        ctx.shadowColor = "#22d3ee"; ctx.shadowBlur = 12 * dpr;
+        ctx.beginPath(); ctx.arc(x, y, 1.8 * dpr, 0, Math.PI * 2); ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+
+      for (const n of nodes) {
+        ctx.fillStyle = "rgba(190,200,255,0.7)";
+        ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2); ctx.fill();
+      }
+      requestAnimationFrame(tick);
+    };
+    tick();
+  }
+
+  /* ---------- Cursor glow + card spotlight ---------- */
+  const glow = $(".cursor-glow");
+  if (fine && glow) {
+    addEventListener("pointermove", (e) => {
+      glow.style.left = e.clientX + "px";
+      glow.style.top = e.clientY + "px";
+    });
+  } else if (glow) glow.remove();
+
+  $$(".spot").forEach((el) =>
+    el.addEventListener("pointermove", (e) => {
+      const r = el.getBoundingClientRect();
+      el.style.setProperty("--mx", `${e.clientX - r.left}px`);
+      el.style.setProperty("--my", `${e.clientY - r.top}px`);
+    })
+  );
+
+  /* ---------- 3D tilt on console ---------- */
+  if (fine && !reduce) {
+    $$(".tilt").forEach((el) => {
+      el.addEventListener("pointermove", (e) => {
+        const r = el.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        el.style.transform = `perspective(900px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg)`;
       });
-    }, { rootMargin: '50px' });
-    
-    videoObserver.observe(video);
-  }
-});
+      el.addEventListener("pointerleave", () => (el.style.transform = ""));
+    });
 
-// Parallax scroll effect for background
-let lastScrollTop = 0;
-window.addEventListener('scroll', () => {
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrollPercent = (scrollTop / scrollHeight) * 100;
-  
-  // Update scroll progress indicator
-  const progressBar = document.querySelector('.scroll-progress');
-  if (progressBar) {
-    progressBar.style.width = `${scrollPercent}%`;
+    /* magnetic buttons */
+    $$(".magnetic").forEach((el) => {
+      el.addEventListener("pointermove", (e) => {
+        const r = el.getBoundingClientRect();
+        el.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.2}px, ${(e.clientY - r.top - r.height / 2) * 0.3}px)`;
+      });
+      el.addEventListener("pointerleave", () => (el.style.transform = ""));
+    });
   }
-  
-  // Update background particle position based on scroll
-  const bodyAfter = document.querySelector('body');
-  if (bodyAfter) {
-    const yPos = scrollTop * 0.3;
-    bodyAfter.style.setProperty('--scroll-y', `${yPos}px`);
-  }
-  
-  // Parallax effect for animated background
-  const animatedBg = document.querySelector('.animated-bg');
-  if (animatedBg) {
-    const bgY = scrollTop * 0.2;
-    animatedBg.style.transform = `translateY(${bgY}px)`;
-  }
-  
-  lastScrollTop = scrollTop;
 
-  // Highlight active nav link
-  const sections = document.querySelectorAll('section[id], header[id]');
-  const navLinks = document.querySelectorAll('.nav__link');
-  let currentId = 'top';
+  /* ---------- Role typer ---------- */
+  const typer = $("#typer");
+  const roles = [
+    "AI Software Engineer",
+    "LLM & RAG Integrations",
+    "AI Agents & Automation",
+    "React · Next.js · React Native",
+    "Remote Contractor — open to work",
+  ];
+  if (typer && !reduce) {
+    let ri = 0, ci = roles[0].length, deleting = true;
+    const loop = () => {
+      const word = roles[ri];
+      typer.textContent = word.slice(0, ci);
+      let delay = deleting ? 35 : 70;
+      if (deleting && ci === 0) { deleting = false; ri = (ri + 1) % roles.length; delay = 300; }
+      else if (!deleting && ci === roles[ri].length) { deleting = true; delay = 2200; }
+      ci += deleting ? -1 : 1;
+      setTimeout(loop, delay);
+    };
+    setTimeout(loop, 2400);
+  }
 
-  sections.forEach((section) => {
-    const top = section.offsetTop - 120;
-    if (scrollTop >= top) {
-      currentId = section.getAttribute('id');
+  /* ---------- Agent console ---------- */
+  const out = $("#console");
+  const tokensEl = $("#tokens");
+  const latencyEl = $("#latency");
+  const script = [
+    ['<span class="c-p">❯</span> <span class="c-k">agent</span>.run(<span class="c-s">"Answer investor Q from 10-K"</span>)', 500],
+    ['<span class="c-d">  ↳ embedding query…</span>', 350],
+    ['<span class="c-d">  ↳ retrieving 6 chunks from vector store</span>', 450],
+    ['<span class="c-d">  ↳ calling tool: </span><span class="c-k">get_filing</span>(<span class="c-s">"FY2025"</span>)', 450],
+    ['<span class="c-ok">  ✓ grounded answer · 3 citations</span>', 600],
+    ["", 200],
+    ['<span class="c-p">❯</span> <span class="c-k">ship</span>(<span class="c-s">"support-copilot"</span>, { env: <span class="c-s">"prod"</span> })', 500],
+    ['<span class="c-d">  ↳ evals passed 48/48</span>', 400],
+    ['<span class="c-d">  ↳ streaming UI · React + TypeScript</span>', 400],
+    ['<span class="c-ok">  ✓ deployed — users served 24/7</span>', 900],
+    ["", 200],
+    ['<span class="c-p">❯</span> <span class="c-k">hire</span>(<span class="c-s">"andrew"</span>) <span class="c-d">// available now</span>', 0],
+  ];
+  if (out) {
+    if (reduce) {
+      out.innerHTML = script.map((l) => l[0]).join("\n");
+    } else {
+      let tokens = 0;
+      const run = async () => {
+        out.innerHTML = "";
+        for (const [line, wait] of script) {
+          const div = document.createElement("div");
+          div.innerHTML = line || "&nbsp;";
+          div.style.opacity = 0;
+          div.style.transition = "opacity .35s";
+          out.appendChild(div);
+          requestAnimationFrame(() => (div.style.opacity = 1));
+          tokens += Math.floor(Math.random() * 120 + 40);
+          tokensEl.textContent = tokens.toLocaleString();
+          latencyEl.textContent = Math.floor(Math.random() * 90 + 110);
+          await new Promise((r) => setTimeout(r, wait));
+        }
+        const cur = document.createElement("span");
+        cur.className = "cur";
+        out.lastChild.appendChild(cur);
+        setTimeout(run, 5000);
+      };
+      setTimeout(run, 900);
     }
-  });
+  }
 
-  navLinks.forEach((link) => {
-    const href = link.getAttribute('href');
-    const isActive = href === `#${currentId}`;
-    link.classList.toggle('nav__link--active', isActive);
+  /* ---------- Reveal on scroll ---------- */
+  const reveals = $$(".reveal");
+  if ("IntersectionObserver" in window && !reduce) {
+    const io = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((en) => {
+          if (!en.isIntersecting) return;
+          const el = en.target;
+          const sibs = [...el.parentElement.children].filter((c) => c.classList.contains("reveal"));
+          el.style.transitionDelay = `${Math.min(sibs.indexOf(el), 6) * 80}ms`;
+          el.classList.add("is-in");
+          io.unobserve(el);
+        }),
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+    reveals.forEach((el) => io.observe(el));
+  } else reveals.forEach((el) => el.classList.add("is-in"));
+
+  /* ---------- Count-up stats ---------- */
+  const counts = $$(".count");
+  const countUp = (el) => {
+    const to = +el.dataset.to;
+    if (reduce) return (el.textContent = to);
+    const start = performance.now();
+    const step = (t) => {
+      const p = Math.min((t - start) / 1400, 1);
+      el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  setTimeout(() => counts.forEach(countUp), 600);
+
+  /* ---------- Nav: scroll state, progress, active link, mobile ---------- */
+  const nav = $("#nav");
+  const progress = $(".scroll-progress");
+  const links = $$('.nav__links a[href^="#"]:not(.btn)');
+  const sections = links.map((a) => $(a.getAttribute("href"))).filter(Boolean);
+  const onScroll = () => {
+    const y = scrollY;
+    nav.classList.toggle("is-scrolled", y > 20);
+    const max = document.documentElement.scrollHeight - innerHeight;
+    progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+    let current = null;
+    sections.forEach((s) => { if (s.offsetTop - 140 <= y) current = s.id; });
+    links.forEach((a) => a.classList.toggle("is-active", a.getAttribute("href") === `#${current}`));
+  };
+  addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  const toggle = $("#navToggle");
+  const menu = $("#navLinks");
+  toggle.addEventListener("click", () => {
+    const open = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!open));
+    menu.classList.toggle("is-open", !open);
   });
-}, false);
+  $$("a", menu).forEach((a) =>
+    a.addEventListener("click", () => {
+      toggle.setAttribute("aria-expanded", "false");
+      menu.classList.remove("is-open");
+    })
+  );
+
+  /* ---------- Project filter ---------- */
+  const filters = $$(".filter");
+  const projects = $$(".project");
+  filters.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      const f = btn.dataset.filter;
+      filters.forEach((b) => {
+        b.classList.toggle("is-active", b === btn);
+        b.setAttribute("aria-selected", String(b === btn));
+      });
+      projects.forEach((p) => {
+        const show = f === "all" || p.dataset.cat.split(" ").includes(f);
+        p.classList.toggle("is-hidden", !show);
+        if (show) p.classList.add("is-in");
+      });
+    })
+  );
+
+  /* ---------- Copy email ---------- */
+  const copyBtn = $("#copyEmail");
+  if (copyBtn) {
+    copyBtn.addEventListener("click", async () => {
+      const label = $(".copy-label", copyBtn);
+      try {
+        await navigator.clipboard.writeText(copyBtn.dataset.email);
+        label.textContent = "Copied ✓";
+      } catch {
+        location.href = `mailto:${copyBtn.dataset.email}`;
+      }
+      setTimeout(() => (label.textContent = "Copy"), 2000);
+    });
+  }
+
+  const year = $("#year");
+  if (year) year.textContent = new Date().getFullYear();
+})();
