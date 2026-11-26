@@ -294,6 +294,11 @@ ul, ol { list-style: none; }
 }
 .spot:hover::after { opacity: 1; }
 
+/* ---------- Edge (engineer + AI) ---------- */
+.edge { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.edge__k { font-size: 11.5px; color: var(--violet); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 14px; }
+.edge__out { background: linear-gradient(160deg, rgba(34,211,238,0.10), rgba(139,92,246,0.10)); border-color: rgba(34,211,238,0.35); }
+
 /* ---------- Services ---------- */
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .card {
@@ -445,6 +450,7 @@ ul, ol { list-style: none; }
   .hero { grid-template-columns: 1fr; padding-top: 130px; gap: 64px; }
   .hero__visual { max-width: 560px; }
   .cards, .projects { grid-template-columns: repeat(2, 1fr); }
+  .edge { grid-template-columns: 1fr; }
   .project--feature { grid-column: span 2; }
   .steps { grid-template-columns: repeat(2, 1fr); row-gap: 40px; }
   .steps::before { display: none; }
@@ -468,7 +474,7 @@ ul, ol { list-style: none; }
   .hero__visual { margin-left: 18px; }
   .stats { grid-template-columns: repeat(2, auto); gap: 22px 36px; }
   .section { padding: 90px 16px 0; }
-  .cards, .projects, .models, .steps { grid-template-columns: 1fr; }
+  .cards, .projects, .models, .steps, .edge { grid-template-columns: 1fr; }
   .project--feature, .project--feature:nth-child(2) { grid-column: auto; flex-direction: column; }
   .project--feature .project__media,
   .project--feature:nth-child(2) .project__media { min-height: 0; aspect-ratio: 16 / 10; border: 0; border-bottom: 1px solid var(--border); }

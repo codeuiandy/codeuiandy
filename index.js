@@ -1,4 +1,4 @@
-/* Andrew Okeke — AI Software Engineer portfolio (v2) */
+/* Andrew Okeke — Senior Software Engineer portfolio (v2) */
 document.documentElement.classList.remove("no-js");
 (() => {
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -116,10 +116,10 @@ document.documentElement.classList.remove("no-js");
   /* ---------- Role typer ---------- */
   const typer = $("#typer");
   const roles = [
-    "AI Software Engineer",
-    "LLM & RAG Integrations",
-    "AI Agents & Automation",
-    "React · Next.js · React Native",
+    "Senior Software Engineer",
+    "TypeScript · React · Node · React Native",
+    "AI-accelerated: weeks of work in days",
+    "LLM features · RAG · AI agents",
     "Remote Contractor — open to work",
   ];
   if (typer && !reduce) {
@@ -141,18 +141,18 @@ document.documentElement.classList.remove("no-js");
   const tokensEl = $("#tokens");
   const latencyEl = $("#latency");
   const script = [
-    ['<span class="c-p">❯</span> <span class="c-k">agent</span>.run(<span class="c-s">"Answer investor Q from 10-K"</span>)', 500],
-    ['<span class="c-d">  ↳ embedding query…</span>', 350],
-    ['<span class="c-d">  ↳ retrieving 6 chunks from vector store</span>', 450],
-    ['<span class="c-d">  ↳ calling tool: </span><span class="c-k">get_filing</span>(<span class="c-s">"FY2025"</span>)', 450],
-    ['<span class="c-ok">  ✓ grounded answer · 3 citations</span>', 600],
+    ['<span class="c-p">❯</span> <span class="c-k">andrew</span>.build(<span class="c-s">"checkout-flow"</span>)', 500],
+    ['<span class="c-d">  ↳ architecting · TypeScript + React + Node</span>', 450],
+    ['<span class="c-d">  ↳ writing core logic by hand</span>', 400],
+    ['<span class="c-d">  ↳ AI pair: tests, types &amp; docs generated</span>', 450],
+    ['<span class="c-ok">  ✓ 64/64 tests passing · code reviewed</span>', 600],
     ["", 200],
-    ['<span class="c-p">❯</span> <span class="c-k">ship</span>(<span class="c-s">"support-copilot"</span>, { env: <span class="c-s">"prod"</span> })', 500],
-    ['<span class="c-d">  ↳ evals passed 48/48</span>', 400],
-    ['<span class="c-d">  ↳ streaming UI · React + TypeScript</span>', 400],
-    ['<span class="c-ok">  ✓ deployed — users served 24/7</span>', 900],
+    ['<span class="c-p">❯</span> <span class="c-k">ship</span>(<span class="c-s">"support-copilot"</span>, { ai: <span class="c-k">true</span> })', 500],
+    ['<span class="c-d">  ↳ LLM + retrieval wired into the product</span>', 450],
+    ['<span class="c-ok">  ✓ deployed to production</span>', 500],
+    ['<span class="c-ok">  ⚡ estimate: 3 weeks → delivered: 4 days</span>', 900],
     ["", 200],
-    ['<span class="c-p">❯</span> <span class="c-k">hire</span>(<span class="c-s">"andrew"</span>) <span class="c-d">// available now</span>', 0],
+    ['<span class="c-p">❯</span> <span class="c-k">hire</span>(<span class="c-s">"andrew"</span>) <span class="c-d">// engineer + AI superpowers</span>', 0],
   ];
   if (out) {
     if (reduce) {

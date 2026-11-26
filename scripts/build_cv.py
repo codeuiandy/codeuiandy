@@ -126,7 +126,7 @@ story = []
 logo = circle_logo()
 header_text = [
     Paragraph("Andrew Okeke", name_s),
-    Paragraph("AI Software Engineer &amp; Contractor", title_s),
+    Paragraph("Senior Software Engineer &amp; Contractor &nbsp;<font color='#0e7490' size='9.5'>· AI-accelerated delivery</font>", title_s),
     Paragraph(
         "Lagos, Nigeria (remote worldwide) &nbsp;|&nbsp; +234 811 565 9965 &nbsp;|&nbsp; "
         + a("mailto:frostandy41@gmail.com", "frostandy41@gmail.com") + "<br/>"
@@ -146,19 +146,21 @@ story += [Spacer(1, 7), GradientRule(CW)]
 
 story += section("Profile")
 story.append(Paragraph(
-    "Senior AI software engineer and contractor with 5+ years building production web and mobile products "
-    "for teams in Africa and the United States. I design and ship LLM-powered assistants, retrieval over "
-    "company data, AI support automation, and the React, Next.js and React Native interfaces that make AI "
-    "useful to real users. Currently Team Lead at Discovery Vault Technology; remote contractor for US product "
-    "teams since 2022. Available for fixed-scope projects, monthly retainers and team augmentation, "
-    "with weekly demos and working hours that overlap with US and EU teams.", body))
+    "Senior software engineer and contractor with 5+ years writing production code for web and mobile "
+    "products used in Africa and the US. I design the architecture, write and review the code, and own "
+    "delivery, then use AI-assisted development to <b>ship weeks of work in days</b> without cutting corners. "
+    "I also build AI features (LLM assistants, RAG, agents) when a product needs them. Currently Team Lead at "
+    "Discovery Vault Technology; remote contractor for US teams since 2022. Available for projects, retainers "
+    "and team augmentation.", body))
 
 story += section("Core skills")
 skills = [
-    ("AI &amp; LLM", "LLM APIs, retrieval-augmented generation (RAG), AI agents &amp; tool calling, vector search, "
-                     "prompt engineering, streaming chat interfaces, Python"),
-    ("Web", "TypeScript, JavaScript, React.js, Next.js, Node.js, REST &amp; GraphQL, HTML, CSS/SCSS, PWAs"),
+    ("Engineering", "TypeScript, JavaScript, React.js, Next.js, Node.js, REST &amp; GraphQL, HTML, CSS/SCSS, "
+                    "PWAs, testing, CI/CD"),
     ("Mobile", "React Native (iOS &amp; Android), app store releases"),
+    ("AI speed", "AI pair-programming and agentic coding tools, AI-generated tests and docs, rapid prototyping"),
+    ("AI features", "LLM APIs, retrieval-augmented generation (RAG), AI agents &amp; tool calling, vector search, "
+                    "streaming chat interfaces, Python"),
     ("Leadership", "Team leadership, frontend architecture, code review, mentoring, Agile delivery, client consulting"),
 ]
 story.append(tight(Table([[Paragraph(k, label), Paragraph(v, body)] for k, v in skills],
@@ -215,13 +217,13 @@ def footer(c, doc):
     c.saveState()
     c.setFont("Helvetica", 7.5)
     c.setFillColor(MUTED)
-    c.drawString(M + 6, 9 * mm, "Andrew Okeke · AI Software Engineer & Contractor")
+    c.drawString(M + 6, 9 * mm, "Andrew Okeke · Senior Software Engineer & Contractor")
     c.drawRightString(W - M - 6, 9 * mm, f"Page {doc.page}")
     c.restoreState()
 
 
 doc = SimpleDocTemplate(OUT, pagesize=A4, leftMargin=M, rightMargin=M, topMargin=13 * mm, bottomMargin=15 * mm,
-                        title="Andrew Okeke - AI Software Engineer & Contractor - CV", author="Andrew Okeke",
+                        title="Andrew Okeke - Senior Software Engineer & Contractor - CV", author="Andrew Okeke",
                         subject="Curriculum Vitae")
 doc.build(story, onFirstPage=footer, onLaterPages=footer)
 if logo and os.path.exists(logo):
